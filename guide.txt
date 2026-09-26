@@ -1,0 +1,200 @@
+What’s the business?
+First off, let’s make sure we’ve defined what we think this business is about. It might be a whole company or a single business unit or product or even feature if that item alone has critical mass for its own product/market fit. (Just start with whatever’s easiest- you can always revise.)
+What is the positioning statement?
+For employers who want to understand Sarah’s work style the Portfolio is a website and mobile app that demonstrates Sarah’s prior work and expertise. Unlike a Wix website, this portfolio is designed to match Sarah’s aesthetic and best represent her interactive background including through interactive elements that let users self-serve answer their questions about fit.
+How do we define success?
+The site should contain at least 3 projects with their full design process.
+Usability testing should prove clear navigation
+Visual style should be clean and consistent with Sarah’s other work, as measurable through likert scale questions during usability testing.
+Users should be driven to view at least one portfolio item in full. 
+Who is our user and what’s on their A-list? 
+John the Hiring Manager
+Screening Question: Are you currently hiring Product Managers or UX designers, are a current product manager or UX designer, or work closely with a product manager or UX designer and can speak to expectations for their work?
+John is a senior manager at Dell Technologies and is looking to hire a product manager. He has been a product manager for 25 years and wants someone fresh on his team. Since he will rely on this person, he needs to know he is hiring someone reliable who can do the work and has significant cross-functional experience including with UX design and product management. At bare minimum, he would like to see success metrics and pleasing design, and it is critical that the site work for him as he looks through.
+There are thousands of applicants. The visual is critical but John only has a few seconds to look. He needs something that will draw him in and be a quick explanation - or he’s gone on to the next person.
+Thinks
+I need to hire someone and know they are good at product management and UX design.
+Sees
+A portfolio is required to tell you what previous work looks like and how it went. Design work is more visual than can come across in a behavioral interview. The projects and process must be accessible.
+Feels
+A clean portfolio is an indicator that the person cares about the quality of their work - and vice versa.
+Does
+Only has a few minutes per candidate, so needs to be able to get through it and get the gist quickly.
+Jobs-to-be-Done (JTBD)
+Current Alternatives
+Your Value Proposition
+(user) Hire new person
+Do more work himself
+Simplifies hiring
+Access to visual and process
+Behavioral interview / lack of visual and/or process
+Visual interactions / visibility of work
+Feeling / skills clear within 1 minute
+Not enticing - moves on
+Draws in viewers for competitive advantage for Sarah and leaves the right impression for quick look viewers
+Designed in style of Sarah
+Boring Wix Site gives no cues
+Reflects high care and quality of work
+Simple to edit / adaptable to different roles
+Static, hard to maintain
+Easy to update and maintain to prevent excessive rework yearly
+Surprise and delight interactive element
+Boring, regular person vibes
+Excitement and increased perception of skills and interest
+What do we need to know about the user?
+John the Hiring Manager
+Screening Question: Are you currently hiring Product Managers or UX designers, are a current product manager or UX designer, or work closely with a product manager or UX designer and can speak to expectations for their work?
+PERSONA HYPOTHESIS
+Questions
+What’s it like to hire someone for this role / review a portfolio? What are you looking for?
+What do you look for when hiring? What stands out as important?
+Have you ever hired someone after seeing their portfolio that you regretted? Why?
+Have you ever hired someone after seeing their portfolio and been like - wow - this was great. What made it so?
+JTBD HYPOTHESIS
+Questions
+How do you look through a portfolio? How long do you typically spend?
+What’s [difficult, annoying] about doing so?
+What are the top [5] hardest things about looking through a portfolio? 
+What are the top 5 things you want to do better? What mistakes do you see that give you the ick?
+CLOSING AND MISCELLANEOUS 
+Questions
+Casting a Line (“Anything else?”)
+Housekeeping and Follow Up
+How do we know if our proposition is working for the user?
+What is the core Demand Hypothesis?
+If we create a clean portfolio, people will spend quality time on it and it will enhance Sarah’s standing when looking to be hired.
+What user behaviors get us to the outcome we want?
+Review full page / content for at least one project
+Click into at least 2 tabs
+Download resume
+Email Sarah
+How do we map out the arc of our target customer experience?
+[Consider qualitatively what you might mean by the terms in the ‘CX Map’ below- Acquisition, Onboarding, etc. using a storyboard]
+How do we observe and measure individual user experiences in this arc (CX Map)?
+Item
+Acquisition
+Onboarding
+Engagement
+Outcome
+Retention
+What does this mean?
+Discover Sarah
+Visit site
+Enter portfolio items
+Reviewed details for full picture
+Recommend / hire / review second portfolio item
+-include like/dislike button, perhaps comments
+What are the metrics? What’s the dependent variable (DV)?
+Direction from job apps / word of mouth / resume
+Can use tracking URLs
+Number of unique site visits
+Clicks
+Time on page
+Scroll depth
+Testing - understanding of project matches expected outcome and/or positive sentiment analysis
+Returning user count
+Users who view more than one project
+-like/dislike responses, comments
+What is the cut off for a transition from one step to the next, time-wise?
+N/A - all press is good press
+1 min until interact
+1 min from interact to scroll
+Immediate for next review, clicking button
+N/A
+What’s the line in the sand (LiS) for success vs. failure?
+Go to site
+Stay on site for at least 1 minute
+Scroll or click
+Review at least 1 full project
+Visit next project or return to site later
+What independent variables (IV’s) should we test?
+Where should I put the URL for the site, such as resume, LinkedIn, etc.?
+Should there be a cover page?
+Page layout and types of pages, such as About Me versus putting it upfront.
+How does design and features like surprise and delight change going from visit to engage? Can include button shape, colors, navigation, layout, number of clicks to access portfolio
+Does page layout/scroll/button location lead to more clicks/reviews?
+Does navigation layout lead to clicking into new projects?
+How do we maximize usability?
+USABILITY TEST PLAN
+Purpose: Test whether a hiring manager can use Sarah's portfolio to gather enough concrete evidence about her work to decide whether to invite her to an interview.
+1. EPIC USER STORY
+As John, a hiring manager who has just opened Sarah’s portfolio, I want to review her work and evaluate evidence from her projects, so that I can decide whether to invite her to an interview.
+2. SIX-PANEL STORYBOARD
+Who: John, hiring manager
+What: Needs to screen a product designer candidate
+Where: At his desk before interviews
+Why: To decide who merits deeper review
+Feeling: Focused
+Who: John
+What: Starts reviewing Sarah's portfolio and identifies what it represents
+Where: At his desk
+Why: To determine whether the site contains relevant evidence
+Feeling: Curious
+Who: John
+What: Examines one project and identifies problem, role, actions, and result
+Where: At his desk
+Why: To understand what Sarah actually contributed
+Feeling: Analytical
+Who: John
+What: Reviews a second project and compares the evidence with the first
+Where: At his desk
+Why: To judge range and consistency
+Feeling: Evaluative
+Who: John
+What: Reviews Sarah's background and connects it to the work he has seen
+Where: At his desk
+Why: To form a coherent picture of the candidate
+Feeling: Confident
+Who: John
+What: Records whether he will invite Sarah to interview
+Where: At his desk after review
+Why: To move the hiring process forward
+Feeling: Decisive
+3. CHILD STORIES, USABILITY PROMPTS, AND OECS
+The six child stories unpack the epic into observable steps. Each prompt gives the subject a concrete situation and goal without naming an interface element. Each OEC lists observable criteria for judging whether the participant can complete the task effectively, efficiently, and with confidence.
+Story
+Usability (subject test prompt)
+OEC (Overall Evaluation Criteria)
+As John, the hiring manager, I want to identify Sarah's role and the kind of work in her portfolio, so that I can decide whether her experience is relevant to the role.
+You have just opened Sarah's portfolio. Show me what you would do first to understand what she does and whether her experience seems relevant to this role. Please think aloud; I will observe whether you can identify her role and the type of work represented without help.
+Primary metric: role-and-relevance identification rate = participants who correctly identify Sarah's role and relevant work within the first 60 seconds / participants who begin the task. Compare Variant A vs. Variant B to determine which opening better communicates the portfolio's purpose.
+As John, the hiring manager, I want to select a project and understand its problem and Sarah's contribution, so that I can judge whether her product-design experience is relevant.
+Choose the project you would use to judge Sarah's product-design experience. Show me how you would learn what problem the project addressed and what Sarah contributed. Please think aloud; I will observe whether you can find and accurately explain the problem and Sarah's role without being directed to a specific element.
+Primary metric: project-evidence comprehension rate = participants who select a project and correctly state its problem and Sarah's contribution / participants who begin the project-selection task. Compare Variant A vs. Variant B to identify which project-navigation and case-study structure supports better understanding.
+As John, the hiring manager, I want to determine what changed because of Sarah's work on a project, so that I can judge whether it demonstrates meaningful product-design impact.
+Using the project you are reviewing, show me how you would determine what changed because of Sarah's work and whether the result is meaningful. Please think aloud; I will observe whether you can find a concrete outcome, connect it to her work, and distinguish evidence from an unsupported claim.
+Primary metric: outcome-evidence comprehension rate = participants who find and accurately explain a concrete project outcome / participants who begin the outcome-evaluation task. Compare Variant A vs. Variant B to determine which result presentation leads to stronger evidence comprehension.
+As John, the hiring manager, I want to review a second project and compare it with the first, so that I can judge whether Sarah's experience has range and consistency.
+After reviewing this project, show me what you would do to decide whether Sarah has comparable evidence from another project. Tell me what you notice when you compare them. Please think aloud; I will observe whether you can reach a second project and articulate a meaningful similarity or difference without becoming lost.
+Primary metric: cross-project comparison rate = participants who reach a second distinct project and state a valid similarity or difference / participants who complete the first-project review. Compare Variant A vs. Variant B to identify which navigation pattern better supports exploration and comparison.
+As John, the hiring manager, I want to connect Sarah's background to the projects I reviewed, so that I can explain why her experience fits the role.
+You have reviewed two projects. Show me what you would do next to understand Sarah's background and connect it to the work you just reviewed. Please think aloud; I will observe whether you can find relevant background information and connect it to specific project evidence without needing the information repeated.
+Primary metric: background-to-evidence connection rate = participants who identify a relevant background fact and connect it to project evidence / participants who begin the background-review task. Compare Variant A vs. Variant B to determine which information architecture better supports a coherent candidate assessment.
+As John, the hiring manager, I want to make and record an interview decision based on Sarah's work and background, so that I can move the hiring process forward.
+You have reviewed Sarah's work and background. Show me how you would make your interview decision and capture the evidence that supports it. Please think aloud; I will observe whether you can make an explicit invite/no-invite decision, explain the evidence behind it, and identify the next step without help.
+Primary metric: evidence-backed decision rate = participants who record an explicit invite/no-invite decision with supporting evidence / participants who reach the final decision task. Compare Variant A vs. Variant B to determine which review experience better supports a confident hiring decision.
+4. USABILITY TEST SCRIPT
+Product / prototype version tested: ____________________<w:t xml:space="preserve">Date: ____________________
+Introduction
+Hi! Thank you for joining me. I’m Sarah, and I’m redesigning my portfolio. I’m studying how hiring managers review product-design portfolios. This session will take about 30 minutes. I’ll ask a few background questions and then give you several realistic portfolio-review tasks. Please talk out loud as you work. There are no right answers; I’m interested in what you naturally do. With your permission, I’d like to record the session so I can capture the notes accurately. Is that okay?
+Screening / Background
+·       What is your role?
+·       Have you hired product designers or UX designers?
+·       When you review a portfolio for a candidate, what evidence do you normally look for?
+Experience Tasks
+Task 1. You are screening Sarah for a product design role. You have just opened her portfolio and want to determine what she does and whether the work is relevant to the role. Show me what you would do.
+Moderator output: Does the subject identify Sarah's role and the type of work represented without being told where to look?
+Task 2. You have decided Sarah may be relevant. Pick the project you would use to judge her product-design work, then show me how you would learn what problem she worked on and what she contributed.
+Moderator output: Does the subject select a project and accurately state the problem and Sarah's contribution after reviewing it?
+Task 3. You are considering Sarah for an interview and need evidence that her work produced a meaningful result. Using the project you are reviewing, show me how you would determine what changed because of her work.
+Moderator output: Does the subject identify a concrete result or outcome from the project and connect it to Sarah's work?
+Task 4. The first project gave you useful evidence. Now you want to know whether Sarah has comparable evidence from another project. Show me what you would do next.
+Moderator output: Does the subject reach another project and state at least one meaningful difference or similarity between the two projects?
+Task 5. You have reviewed two projects. Before deciding whether to interview Sarah, you want enough background to explain how her experience connects to the work you just reviewed. Show me what you would do.
+Moderator output: Does the subject identify at least one background fact and connect it to evidence from a project?
+Task 6. You have reviewed Sarah's work and background and now need to decide whether to invite her to an interview. Show me what you would do to make and record that decision.
+Moderator output: Does the subject make an explicit interview/no-interview decision and record or communicate that decision in the prototype?
+Closing
+·       Based on what you reviewed, would you invite Sarah to an interview? Please make the decision you would actually make.
+·       What evidence most influenced that decision?
+Thank you again for your time. If I have a follow-up question about today's session, may I contact you?

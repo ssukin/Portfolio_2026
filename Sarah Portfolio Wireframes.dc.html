@@ -1,0 +1,542 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet data-dc-atomics=""><meta name="design_doc_mode" content="canvas">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link href="https://fonts.googleapis.com/css2?family=Gaegu:wght@400;700&amp;family=Patrick+Hand&amp;display=swap" rel="stylesheet">
+<style>
+body{margin:0;background:#e9e7e1;font-family:"Patrick Hand",system-ui,sans-serif}
+a{color:#3d3a35}a:hover{color:#000}
+.dv-turn{padding:40px 44px 32px;border-bottom:1px solid rgba(0,0,0,.08);scroll-margin-top:16px}
+.dv-thd{display:flex;align-items:baseline;gap:10px;margin:0 0 20px}
+.dv-tid{font:600 10px ui-monospace,Menlo,monospace;padding:3px 7px;background:#1a1a1a;color:#fff;border-radius:4px;text-decoration:none}
+.dv-tname{font:600 13px/1.2 system-ui,sans-serif;color:#1a1a1a}
+.dv-opts{display:flex;flex-wrap:wrap;gap:28px;align-items:flex-start}
+.dv-opt{flex:none;display:flex;flex-direction:column;gap:9px;scroll-margin-top:16px}
+.dv-oid{font:600 10.5px ui-monospace,Menlo,monospace;padding:3px 7px;background:rgba(0,0,0,.09);color:#1a1a1a;border-radius:5px;text-decoration:none}
+.dv-olabel{display:flex;align-items:baseline;gap:8px;font:400 11px/1.3 system-ui,sans-serif;color:rgba(0,0,0,.55);max-width:860px}
+.dv-card{max-width:100%;background:#fff;border:1px solid rgba(0,0,0,.12);border-radius:8px;box-shadow:0 2px 6px rgba(0,0,0,.09);overflow:hidden}
+.dv-opt:target .dv-oid{background:#2a78d6;color:#fff}
+.dv-next{margin:22px 0 0;font:12px/1.5 system-ui,sans-serif;color:rgba(0,0,0,.5)}
+</style></helmet>
+
+<section class="dv-turn" id="t1">
+<div class="dv-thd"><a class="dv-tid" href="#t1">1</a><span class="dv-tname">Two low-fi alternatives — both testable against the six-task plan</span></div>
+<div class="dv-opts">
+
+<div class="dv-opt" id="1a">
+<div class="dv-olabel"><a class="dv-oid" href="#1a">1a</a>Variant A — full-screen splash gate cover + tabbed Problem / Process / Result case study. Deliberate one-click entry; evidence is compartmentalized.</div>
+<div class="dv-card" style="width:880px">
+<div style="display:flex;align-items:center;gap:8px;padding:8px 12px;background:#dedbd4;border-bottom:2px solid #3d3a35">
+<div style="display:flex;gap:6px"><div style="width:11px;height:11px;border:2px solid #3d3a35;border-radius:50%"></div><div style="width:11px;height:11px;border:2px solid #3d3a35;border-radius:50%"></div><div style="width:11px;height:11px;border:2px solid #3d3a35;border-radius:50%"></div></div>
+<div style="flex:1;background:#fff;border:2px solid #3d3a35;border-radius:4px;padding:2px 10px;font:15px 'Patrick Hand';color:#7a766e">sarahdesigns.com</div>
+</div>
+
+<div style="height:600px;overflow:auto;background:#fff;position:relative">
+
+<sc-if value="{{ aCover }}" hint-placeholder-val="{{ true }}">
+<div style="min-height:600px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:26px;padding:40px;box-sizing:border-box">
+<div style="font:700 60px/1 Gaegu,cursive;color:#2f2c28;letter-spacing:.5px">Sarah Sukin</div>
+<div style="width:120px;border-top:3px solid #b9b5ac"></div>
+<div style="font:24px 'Patrick Hand';color:#5c584f;text-align:center;max-width:520px;text-wrap:pretty">Product Manager &amp; UX Designer<br></div><div style="font: 24px 'Patrick Hand'; color: #5c584f; text-align: center; max-width: 520px; text-wrap: pretty; font-size: 16px">I lead cross-functional teams that deliver value-driven, user-centric platform experiences. I collaborate with clients and stakeholders to seamlessly integrate design into technology solutions, serving as an expert on UI/UX design and research strategies. I manage the full lifecycle of digital solutions, from roadmap to execution.<br></div>
+<button onClick="{{ aGoWork }}" style="margin-top:6px;font:700 26px Gaegu,cursive;color:#2f2c28;background:#f1efe9;border:3px solid #3d3a35;border-radius:6px;padding:14px 40px;cursor:pointer;box-shadow:3px 3px 0 #cdc9c0">See my work →</button>
+<div style="display:flex;gap:24px;margin-top:10px;font:19px 'Patrick Hand';color:#6b675e;text-decoration:underline">
+<span style="cursor:pointer">About me</span><span style="cursor:pointer">Resume (PDF)</span><span style="cursor:pointer">Email</span>
+</div>
+<div style="position:absolute;bottom:16px;left:0;right:0;text-align:center;font:13px ui-monospace,monospace;color:#a8a49b">[ nothing below the fold — gate is the whole screen ]</div>
+</div>
+</sc-if>
+
+<sc-if value="{{ aWork }}">
+<div>
+  <div style="display:flex;align-items:center;justify-content:space-between;padding:14px 26px;border-bottom:2px solid #3d3a35">
+    <div onClick="{{ aGoCover }}" style="font:700 26px Gaegu,cursive;color:#2f2c28;cursor:pointer">Sarah Sukin</div>
+    <div style="display:flex;gap:22px;font:20px 'Patrick Hand';color:#4a463f">
+      <span style="border-bottom:3px solid #3d3a35">Work</span>
+      <span onClick="{{ aGoAbout }}" style="cursor:pointer;text-decoration:underline">About</span>
+    </div>
+  </div>
+  <div style="padding:30px 26px 40px">
+    <div style="font:700 34px Gaegu,cursive;color:#2f2c28;margin-bottom:4px">Selected work</div>
+    <div style="font:20px 'Patrick Hand';color:#6b675e;margin-bottom:24px">I have 7 years of experience in strategy, product management, and UX design.</div>
+    <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:20px">
+      <div onClick="{{ aGoP1 }}" style="border:3px solid #3d3a35;border-radius:6px;padding:12px;cursor:pointer;box-shadow:3px 3px 0 #e2ded6">
+        <div style="height:120px;border:2px solid #b9b5ac;background:linear-gradient(to top right,transparent calc(50% - 1.5px),#cfcbc2 50%,transparent calc(50% + 1.5px)),linear-gradient(to bottom right,transparent calc(50% - 1.5px),#cfcbc2 50%,transparent calc(50% + 1.5px));display:flex;align-items:flex-end;justify-content:center;padding-bottom:6px;box-sizing:border-box"><span style="font:12px ui-monospace,monospace;color:#8e8a82;background:#fff;padding:0 4px">hero shot</span></div>
+        <div style="font:700 22px Gaegu,cursive;color:#2f2c28;margin-top:10px">01 — Scheduling tool</div>
+        <div style="font:18px/1.35 'Patrick Hand';color:#6b675e">Cut dispatcher rework in half</div>
+        <div style="font:17px 'Patrick Hand';color:#3d3a35;text-decoration:underline;margin-top:8px">Read case study</div>
+      </div>
+      <div onClick="{{ aGoP2 }}" style="border:3px solid #3d3a35;border-radius:6px;padding:12px;cursor:pointer;box-shadow:3px 3px 0 #e2ded6">
+        <div style="height:120px;border:2px solid #b9b5ac;background:linear-gradient(to top right,transparent calc(50% - 1.5px),#cfcbc2 50%,transparent calc(50% + 1.5px)),linear-gradient(to bottom right,transparent calc(50% - 1.5px),#cfcbc2 50%,transparent calc(50% + 1.5px));display:flex;align-items:flex-end;justify-content:center;padding-bottom:6px;box-sizing:border-box"><span style="font:12px ui-monospace,monospace;color:#8e8a82;background:#fff;padding:0 4px">hero shot</span></div>
+        <div style="font:700 22px Gaegu,cursive;color:#2f2c28;margin-top:10px">02 — Onboarding flow</div>
+        <div style="font:18px/1.35 'Patrick Hand';color:#6b675e">First-week activation, mobile</div>
+        <div style="font:17px 'Patrick Hand';color:#3d3a35;text-decoration:underline;margin-top:8px">Read case study</div>
+      </div>
+      <div style="border:3px dashed #b9b5ac;border-radius:6px;padding:12px">
+        <div style="height:120px;border:2px solid #ddd9d1;background:linear-gradient(to top right,transparent calc(50% - 1.5px),#e5e1d9 50%,transparent calc(50% + 1.5px)),linear-gradient(to bottom right,transparent calc(50% - 1.5px),#e5e1d9 50%,transparent calc(50% + 1.5px))"></div>
+        <div style="font:700 22px Gaegu,cursive;color:#a8a49b;margin-top:10px">03 — TBD</div>
+        <div style="font:18px 'Patrick Hand';color:#b9b5ac">placeholder slot</div>
+      </div>
+    </div>
+  </div>
+</div>
+</sc-if>
+
+<sc-if value="{{ aProj }}">
+<div>
+  <div style="display:flex;align-items:center;justify-content:space-between;padding:14px 26px;border-bottom:2px solid #3d3a35">
+    <div onClick="{{ aGoCover }}" style="font:700 26px Gaegu,cursive;color:#2f2c28;cursor:pointer">Sarah Sukin</div>
+    <div style="display:flex;gap:22px;font:20px 'Patrick Hand';color:#4a463f">
+      <span onClick="{{ aGoWork }}" style="cursor:pointer;text-decoration:underline">Work</span>
+      <span onClick="{{ aGoAbout }}" style="cursor:pointer;text-decoration:underline">About</span>
+    </div>
+  </div>
+  <div style="padding:22px 26px 40px">
+    <div onClick="{{ aGoWork }}" style="font:18px 'Patrick Hand';color:#6b675e;cursor:pointer;text-decoration:underline">← All work</div>
+    <div style="display:flex;align-items:flex-end;justify-content:space-between;gap:20px;margin-top:10px">
+      <div>
+        <div style="font:700 36px/1.1 Gaegu,cursive;color:#2f2c28">{{ aTitle }}</div>
+        <div style="font:20px 'Patrick Hand';color:#6b675e">{{ aSub }}</div>
+      </div>
+      <div onClick="{{ aToggleSkim }}" style="display:flex;align-items:center;gap:9px;border:3px solid #3d3a35;border-radius:20px;padding:6px 14px;cursor:pointer;background:#f1efe9;white-space:nowrap">
+        <div style="width:15px;height:15px;border:2px solid #3d3a35;border-radius:3px;display:flex;align-items:center;justify-content:center;font:700 13px Gaegu,cursive;color:#2f2c28">{{ aSkimMark }}</div>
+        <span style="font:19px 'Patrick Hand';color:#2f2c28">60-second skim</span>
+      </div>
+    </div>
+
+    <div style="display:flex;gap:6px;margin-top:20px;border-bottom:3px solid #3d3a35">
+      <div onClick="{{ aTabProblem }}" style="padding:8px 22px;border:3px solid #3d3a35;border-bottom:none;border-radius:6px 6px 0 0;margin-bottom:-3px;font:700 21px Gaegu,cursive;cursor:pointer;background:{{ aBgProblem }};color:#2f2c28">Problem</div>
+      <div onClick="{{ aTabProcess }}" style="padding:8px 22px;border:3px solid #3d3a35;border-bottom:none;border-radius:6px 6px 0 0;margin-bottom:-3px;font:700 21px Gaegu,cursive;cursor:pointer;background:{{ aBgProcess }};color:#2f2c28">Process</div>
+      <div onClick="{{ aTabResult }}" style="padding:8px 22px;border:3px solid #3d3a35;border-bottom:none;border-radius:6px 6px 0 0;margin-bottom:-3px;font:700 21px Gaegu,cursive;cursor:pointer;background:{{ aBgResult }};color:#2f2c28">Result</div>
+      <div style="flex:1"></div>
+      <div style="align-self:center;font:16px ui-monospace,monospace;color:#a8a49b;padding-bottom:6px">my role: lead designer · 2024</div>
+    </div>
+
+    <sc-if value="{{ aSkim }}" hint-placeholder-val="{{ false }}">
+      <div style="border:3px solid #3d3a35;border-top:none;border-radius:0 0 6px 6px;padding:22px;background:#faf9f6">
+        <div style="font:700 24px Gaegu,cursive;color:#2f2c28;margin-bottom:12px">The whole thing in 60 seconds</div>
+        <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:16px">
+          <div style="border:2px solid #b9b5ac;border-radius:5px;padding:12px"><div style="font:17px ui-monospace,monospace;color:#8e8a82">PROBLEM</div><div style="font:20px/1.3 'Patrick Hand';color:#3d3a35">{{ aSkimProblem }}</div></div>
+          <div style="border:2px solid #b9b5ac;border-radius:5px;padding:12px"><div style="font:17px ui-monospace,monospace;color:#8e8a82">WHAT I DID</div><div style="font:20px/1.3 'Patrick Hand';color:#3d3a35">{{ aSkimDid }}</div></div>
+          <div style="border:2px solid #b9b5ac;border-radius:5px;padding:12px"><div style="font:17px ui-monospace,monospace;color:#8e8a82">RESULT</div><div style="font:20px/1.3 'Patrick Hand';color:#3d3a35">{{ aSkimResult }}</div></div>
+        </div>
+        <div onClick="{{ aToggleSkim }}" style="margin-top:16px;font:19px 'Patrick Hand';color:#3d3a35;text-decoration:underline;cursor:pointer">Show me the full story →</div>
+      </div>
+    </sc-if>
+
+    <sc-if value="{{ aFull }}" hint-placeholder-val="{{ true }}">
+    <div style="border:3px solid #3d3a35;border-top:none;border-radius:0 0 6px 6px;padding:22px;min-height:250px">
+      <sc-if value="{{ aOnProblem }}" hint-placeholder-val="{{ true }}">
+        <div style="display:flex;gap:22px">
+          <div style="flex:1.1">
+            <div style="font:700 25px Gaegu,cursive;color:#2f2c28">{{ aProblemHead }}</div>
+            <div style="font:20px/1.45 'Patrick Hand';color:#5c584f;margin-top:8px;text-wrap:pretty">{{ aProblemBody }}</div>
+            <div style="display:flex;flex-direction:column;gap:7px;margin-top:16px">
+              <div style="font:19px 'Patrick Hand';color:#3d3a35">• {{ aB1 }}</div>
+              <div style="font:19px 'Patrick Hand';color:#3d3a35">• {{ aB2 }}</div>
+              <div style="font:19px 'Patrick Hand';color:#3d3a35">• {{ aB3 }}</div>
+            </div>
+          </div>
+          <div style="flex:.9;border:2px solid #b9b5ac;background:linear-gradient(to top right,transparent calc(50% - 1.5px),#cfcbc2 50%,transparent calc(50% + 1.5px)),linear-gradient(to bottom right,transparent calc(50% - 1.5px),#cfcbc2 50%,transparent calc(50% + 1.5px));min-height:180px;display:flex;align-items:flex-end;justify-content:center;padding-bottom:8px"><span style="font:13px ui-monospace,monospace;color:#8e8a82;background:#fff;padding:0 5px">{{ aProblemCap }}</span></div>
+        </div>
+      </sc-if>
+      <sc-if value="{{ aOnProcess }}" hint-placeholder-val="{{ false }}">
+        <div>
+          <div style="font:700 25px Gaegu,cursive;color:#2f2c28">{{ aProcessHead }}</div>
+          <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:16px">
+            <div><div style="height:110px;border:2px solid #b9b5ac;background:linear-gradient(to top right,transparent calc(50% - 1.5px),#cfcbc2 50%,transparent calc(50% + 1.5px)),linear-gradient(to bottom right,transparent calc(50% - 1.5px),#cfcbc2 50%,transparent calc(50% + 1.5px))"></div><div style="font:700 20px Gaegu,cursive;color:#2f2c28;margin-top:7px">{{ aS1 }}</div><div style="font:18px/1.3 'Patrick Hand';color:#6b675e">{{ aS1b }}</div></div>
+            <div><div style="height:110px;border:2px solid #b9b5ac;background:linear-gradient(to top right,transparent calc(50% - 1.5px),#cfcbc2 50%,transparent calc(50% + 1.5px)),linear-gradient(to bottom right,transparent calc(50% - 1.5px),#cfcbc2 50%,transparent calc(50% + 1.5px))"></div><div style="font:700 20px Gaegu,cursive;color:#2f2c28;margin-top:7px">{{ aS2 }}</div><div style="font:18px/1.3 'Patrick Hand';color:#6b675e">{{ aS2b }}</div></div>
+            <div><div style="height:110px;border:2px solid #b9b5ac;background:linear-gradient(to top right,transparent calc(50% - 1.5px),#cfcbc2 50%,transparent calc(50% + 1.5px)),linear-gradient(to bottom right,transparent calc(50% - 1.5px),#cfcbc2 50%,transparent calc(50% + 1.5px))"></div><div style="font:700 20px Gaegu,cursive;color:#2f2c28;margin-top:7px">{{ aS3 }}</div><div style="font:18px/1.3 'Patrick Hand';color:#6b675e">{{ aS3b }}</div></div>
+            <div><div style="height:110px;border:2px solid #b9b5ac;background:linear-gradient(to top right,transparent calc(50% - 1.5px),#cfcbc2 50%,transparent calc(50% + 1.5px)),linear-gradient(to bottom right,transparent calc(50% - 1.5px),#cfcbc2 50%,transparent calc(50% + 1.5px))"></div><div style="font:700 20px Gaegu,cursive;color:#2f2c28;margin-top:7px">{{ aS4 }}</div><div style="font:18px/1.3 'Patrick Hand';color:#6b675e">{{ aS4b }}</div></div>
+          </div>
+          <div style="border-left:4px solid #b9b5ac;padding:6px 0 6px 14px;margin-top:18px;font:20px/1.4 'Patrick Hand';color:#5c584f">{{ aQuote }}</div>
+        </div>
+      </sc-if>
+      <sc-if value="{{ aOnResult }}" hint-placeholder-val="{{ false }}">
+        <div>
+          <div style="font:700 25px Gaegu,cursive;color:#2f2c28">{{ aResultHead }}</div>
+          <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:16px">
+            <div style="border:3px solid #3d3a35;border-radius:6px;padding:14px;text-align:center;box-shadow:3px 3px 0 #e2ded6"><div style="font:700 40px Gaegu,cursive;color:#2f2c28">{{ aM1 }}</div><div style="font:18px 'Patrick Hand';color:#6b675e">{{ aM1L }}</div></div>
+            <div style="border:3px solid #3d3a35;border-radius:6px;padding:14px;text-align:center;box-shadow:3px 3px 0 #e2ded6"><div style="font:700 40px Gaegu,cursive;color:#2f2c28">{{ aM2 }}</div><div style="font:18px 'Patrick Hand';color:#6b675e">{{ aM2L }}</div></div>
+            <div style="border:3px solid #3d3a35;border-radius:6px;padding:14px;text-align:center;box-shadow:3px 3px 0 #e2ded6"><div style="font:700 40px Gaegu,cursive;color:#2f2c28">{{ aM3 }}</div><div style="font:18px 'Patrick Hand';color:#6b675e">{{ aM3L }}</div></div>
+          </div>
+          <div style="font:19px 'Patrick Hand';color:#8e8a82;margin-top:12px">{{ aMethod }}</div>
+          <div style="display:flex;gap:14px;margin-top:20px">
+            <div onClick="{{ aGoOther }}" style="border:3px solid #3d3a35;border-radius:6px;padding:10px 20px;font:700 21px Gaegu,cursive;color:#2f2c28;background:#f1efe9;cursor:pointer;box-shadow:3px 3px 0 #cdc9c0">{{ aNextLabel }}</div>
+            <div onClick="{{ aGoAbout }}" style="border:3px solid #b9b5ac;border-radius:6px;padding:10px 20px;font:700 21px Gaegu,cursive;color:#6b675e;cursor:pointer">About Sarah</div>
+          </div>
+        </div>
+      </sc-if>
+    </div>
+    </sc-if>
+  </div>
+</div>
+</sc-if>
+
+<sc-if value="{{ aAbout }}">
+<div>
+  <div style="display:flex;align-items:center;justify-content:space-between;padding:14px 26px;border-bottom:2px solid #3d3a35">
+    <div onClick="{{ aGoCover }}" style="font:700 26px Gaegu,cursive;color:#2f2c28;cursor:pointer">Sarah Sukin</div>
+    <div style="display:flex;gap:22px;font:20px 'Patrick Hand';color:#4a463f">
+      <span onClick="{{ aGoWork }}" style="cursor:pointer;text-decoration:underline">Work</span>
+      <span style="border-bottom:3px solid #3d3a35">About</span>
+    </div>
+  </div>
+  <div style="padding: 28px 26px 40px; display: flex; gap: 26px; position: relative">
+    <div style="width: 190px; flex: none; position: relative">
+      <div style="height:190px;border:2px solid #b9b5ac;background:linear-gradient(to top right,transparent calc(50% - 1.5px),#cfcbc2 50%,transparent calc(50% + 1.5px)),linear-gradient(to bottom right,transparent calc(50% - 1.5px),#cfcbc2 50%,transparent calc(50% + 1.5px));display:flex;align-items:flex-end;justify-content:center;padding-bottom:8px"><span style="font:12px ui-monospace,monospace;color:#8e8a82;background:#fff;padding:0 4px">portrait</span></div>
+      <div style="border:3px solid #3d3a35;border-radius:6px;padding:9px;text-align:center;font:700 20px Gaegu,cursive;color:#2f2c28;background:#f1efe9;cursor:pointer;margin-top:14px;box-shadow:3px 3px 0 #cdc9c0">Download resume</div>
+      <div style="border:3px solid #b9b5ac;border-radius:6px;padding:9px;text-align:center;font:700 20px Gaegu,cursive;color:#6b675e;cursor:pointer;margin-top:10px">Email Sarah</div>
+    <div style="font-size: 17px; line-height: 1; font-family: Patrick Hand; position: absolute; left: 5px; top: 336px; color: #8E8A82">Washington, DC · open to remote</div></div>
+    <div style="flex: 1; position: relative">
+      <div style="font:700 34px Gaegu,cursive;color:#2f2c28">About</div>
+      <div style="font:21px/1.5 'Patrick Hand';color:#5c584f;margin-top:8px;max-width:520px;text-wrap:pretty">Ten years between product management and UX. I do the research, draw the thing, and stay through the pilot — which is why the projects here have numbers attached.</div>
+      <div style="font:700 24px Gaegu,cursive;color:#2f2c28;margin-top:22px">How I work</div>
+      <div style="display:flex;flex-direction:column;gap:7px;margin-top:8px">
+        <div style="font:20px 'Patrick Hand';color:#3d3a35">• Research first</div>
+        <div style="font:20px 'Patrick Hand';color:#3d3a35">• Wireframes before pixels — cheap to be wrong</div>
+        <div style="font:20px 'Patrick Hand';color:#3d3a35">• Ship a pilot, measure, then scale</div>
+      </div>
+      <div style="display:flex;gap:12px;margin-top:22px;flex-wrap:wrap">
+        <div style="border:2px solid #b9b5ac;border-radius:20px;padding:5px 14px;font:18px 'Patrick Hand';color:#5c584f">Research</div>
+        <div style="border:2px solid #b9b5ac;border-radius:20px;padding:5px 14px;font:18px 'Patrick Hand';color:#5c584f">Prototyping</div>
+        <div style="border:2px solid #b9b5ac;border-radius:20px;padding:5px 14px;font:18px 'Patrick Hand';color:#5c584f">Usability testing</div>
+        <div style="border:2px solid #b9b5ac;border-radius:20px;padding:5px 14px;font:18px 'Patrick Hand';color:#5c584f">Product strategy</div>
+      </div><div onClick="{{ aGoWork }}" style="font:20px 'Patrick Hand';color:#3d3a35;text-decoration:underline;cursor:pointer;margin-top:24px">← Back to the work<div style="font-size: 17px; line-height: 1; font-family: Patrick Hand; position: absolute; left: 376px; top: 391px; color: #8E8A82; text-decoration-line: underline">Click for a hidden treat</div></div>
+      
+    </div>
+  </div>
+</div>
+</sc-if>
+
+</div>
+<div style="display:flex;align-items:center;gap:10px;padding:8px 14px;background:#dedbd4;border-top:2px solid #3d3a35;font:14px ui-monospace,monospace;color:#5c584f">
+<span>screen:</span><span style="background:#fff;border:2px solid #3d3a35;border-radius:4px;padding:1px 8px">{{ aScreenName }}</span>
+<span style="margin-left:auto;cursor:pointer;text-decoration:underline" onClick="{{ aGoCover }}">restart prototype</span>
+</div>
+</div>
+</div>
+
+<div class="dv-opt" id="1b">
+<div class="dv-olabel"><a class="dv-oid" href="#1b">1b</a>Variant B — scrollable hero with projects visible below the fold + linear scroll narrative case study. No gate; evidence arrives in one story.</div>
+<div class="dv-card" style="width:880px">
+<div style="display:flex;align-items:center;gap:8px;padding:8px 12px;background:#dedbd4;border-bottom:2px solid #3d3a35">
+<div style="display:flex;gap:6px"><div style="width:11px;height:11px;border:2px solid #3d3a35;border-radius:50%"></div><div style="width:11px;height:11px;border:2px solid #3d3a35;border-radius:50%"></div><div style="width:11px;height:11px;border:2px solid #3d3a35;border-radius:50%"></div></div>
+<div style="flex:1;background:#fff;border:2px solid #3d3a35;border-radius:4px;padding:2px 10px;font:15px 'Patrick Hand';color:#7a766e">sarahdesigns.com</div>
+</div>
+
+<div style="height:600px;overflow:auto;background:#fff">
+<div style="position:sticky;top:0;z-index:2;display:flex;align-items:center;justify-content:space-between;padding:12px 26px;background:#fff;border-bottom:2px solid #3d3a35">
+  <div onClick="{{ bGoHome }}" style="font:700 24px Gaegu,cursive;color:#2f2c28;cursor:pointer">Sarah Sukin</div>
+  <div style="display:flex;gap:20px;font:19px 'Patrick Hand';color:#4a463f">
+    <span onClick="{{ bGoHome }}" style="cursor:pointer;text-decoration:underline">Work</span>
+    <span onClick="{{ bGoAbout }}" style="cursor:pointer;text-decoration:underline">About</span>
+  </div>
+</div>
+
+<sc-if value="{{ bHome }}" hint-placeholder-val="{{ true }}">
+<div>
+  <div style="padding:38px 26px 30px;border-bottom:2px dashed #ddd9d1">
+    <div style="display:flex;gap:26px;align-items:flex-start">
+      <div style="flex:1.2">
+        <div style="font:700 44px/1.05 Gaegu,cursive;color:#2f2c28">I solve problems and connect people.</div>
+        <div style="font:22px/1.45 'Patrick Hand';color:#5c584f;margin-top:12px;max-width:430px;text-wrap:pretty">Product Manager &amp; UX Designer</div>
+        <div style="display:flex;gap:12px;margin-top:18px">
+          <div onClick="{{ bGoP1 }}" style="border:3px solid #3d3a35;border-radius:6px;padding:9px 20px;font:700 20px Gaegu,cursive;color:#2f2c28;background:#f1efe9;cursor:pointer;box-shadow:3px 3px 0 #cdc9c0">See my work</div>
+          <div style="border:3px solid #b9b5ac;border-radius:6px;padding:9px 20px;font:700 20px Gaegu,cursive;color:#6b675e;cursor:pointer">Resume (PDF)</div>
+        </div>
+      </div>
+      <div style="flex:.8;border:2px solid #b9b5ac;background:linear-gradient(to top right,transparent calc(50% - 1.5px),#cfcbc2 50%,transparent calc(50% + 1.5px)),linear-gradient(to bottom right,transparent calc(50% - 1.5px),#cfcbc2 50%,transparent calc(50% + 1.5px));height:200px;display:flex;align-items:flex-end;justify-content:center;padding-bottom:8px"><span style="font:13px ui-monospace,monospace;color:#8e8a82;background:#fff;padding:0 5px">portrait or work collage</span></div>
+    </div>
+    <div style="text-align:center;font:15px ui-monospace,monospace;color:#a8a49b;margin-top:22px">[ first project card is visible here at 100% zoom ↓ ]</div>
+  </div>
+
+  <div style="padding:26px 26px 40px">
+    <div style="font:700 30px Gaegu,cursive;color:#2f2c28;margin-bottom:16px">Selected work</div>
+    <div style="display:flex;flex-direction:column;gap:18px">
+      <div onClick="{{ bGoP1 }}" style="display:flex;gap:18px;border:3px solid #3d3a35;border-radius:6px;padding:14px;cursor:pointer;box-shadow:3px 3px 0 #e2ded6">
+        <div style="width:230px;flex:none;height:140px;border:2px solid #b9b5ac;background:linear-gradient(to top right,transparent calc(50% - 1.5px),#cfcbc2 50%,transparent calc(50% + 1.5px)),linear-gradient(to bottom right,transparent calc(50% - 1.5px),#cfcbc2 50%,transparent calc(50% + 1.5px))"></div>
+        <div style="flex:1">
+          <div style="font:16px ui-monospace,monospace;color:#8e8a82">PROJECT 01 · ENTERPRISE TOOL</div>
+          <div style="font:700 27px Gaegu,cursive;color:#2f2c28;margin-top:4px">Field scheduling, rebuilt</div>
+          <div style="font:20px/1.4 'Patrick Hand';color:#5c584f;margin-top:4px;max-width:420px">Dispatchers were re-entering 400 techs' jobs every morning. I rode along, wireframed three layouts, piloted one.</div>
+          <div style="display:flex;gap:10px;margin-top:10px">
+            <span style="border:2px solid #b9b5ac;border-radius:4px;padding:2px 9px;font:17px 'Patrick Hand';color:#5c584f">−52% rework</span>
+            <span style="border:2px solid #b9b5ac;border-radius:4px;padding:2px 9px;font:17px 'Patrick Hand';color:#5c584f">9/11 depots adopted</span>
+          </div>
+        </div>
+      </div>
+      <div onClick="{{ bGoP2 }}" style="display:flex;gap:18px;border:3px solid #3d3a35;border-radius:6px;padding:14px;cursor:pointer;box-shadow:3px 3px 0 #e2ded6">
+        <div style="width:230px;flex:none;height:140px;border:2px solid #b9b5ac;background:linear-gradient(to top right,transparent calc(50% - 1.5px),#cfcbc2 50%,transparent calc(50% + 1.5px)),linear-gradient(to bottom right,transparent calc(50% - 1.5px),#cfcbc2 50%,transparent calc(50% + 1.5px))"></div>
+        <div style="flex:1">
+          <div style="font:16px ui-monospace,monospace;color:#8e8a82">PROJECT 02 · MOBILE</div>
+          <div style="font:700 27px Gaegu,cursive;color:#2f2c28;margin-top:4px">First-week onboarding</div>
+          <div style="font:20px/1.4 'Patrick Hand';color:#5c584f;margin-top:4px;max-width:420px">Signups stalled before the first useful action. Five-screen flow, tested with 12 new users.</div>
+          <div style="display:flex;gap:10px;margin-top:10px">
+            <span style="border:2px solid #b9b5ac;border-radius:4px;padding:2px 9px;font:17px 'Patrick Hand';color:#5c584f">+31% activation</span>
+            <span style="border:2px solid #b9b5ac;border-radius:4px;padding:2px 9px;font:17px 'Patrick Hand';color:#5c584f">2 steps removed</span>
+          </div>
+        </div>
+      </div>
+      <div style="display:flex;gap:18px;border:3px dashed #b9b5ac;border-radius:6px;padding:14px">
+        <div style="width:230px;flex:none;height:100px;border:2px solid #ddd9d1;background:linear-gradient(to top right,transparent calc(50% - 1.5px),#e5e1d9 50%,transparent calc(50% + 1.5px)),linear-gradient(to bottom right,transparent calc(50% - 1.5px),#e5e1d9 50%,transparent calc(50% + 1.5px))"></div>
+        <div style="font:700 25px Gaegu,cursive;color:#a8a49b;align-self:center">Project 03 — placeholder slot</div>
+      </div>
+    </div>
+    
+  </div>
+</div>
+</sc-if>
+
+<sc-if value="{{ bProj }}">
+<div>
+  <div style="padding:20px 26px 40px">
+    <div onClick="{{ bGoHome }}" style="font:18px 'Patrick Hand';color:#6b675e;cursor:pointer;text-decoration:underline">← All work</div>
+    <div style="display:flex;align-items:flex-start;justify-content:space-between;gap:20px;margin-top:10px">
+      <div>
+        <div style="font:16px ui-monospace,monospace;color:#8e8a82">{{ bKicker }}</div>
+        <div style="font:700 38px/1.1 Gaegu,cursive;color:#2f2c28;margin-top:4px">{{ bTitle }}</div>
+        <div style="font:21px 'Patrick Hand';color:#5c584f;margin-top:4px">{{ bSub }}</div>
+      </div>
+      <div onClick="{{ bToggleSkim }}" style="display:flex;align-items:center;gap:9px;border:3px solid #3d3a35;border-radius:20px;padding:6px 14px;cursor:pointer;background:#f1efe9;white-space:nowrap">
+        <div style="width:15px;height:15px;border:2px solid #3d3a35;border-radius:3px;display:flex;align-items:center;justify-content:center;font:700 13px Gaegu,cursive;color:#2f2c28">{{ bSkimMark }}</div>
+        <span style="font:19px 'Patrick Hand';color:#2f2c28">60-second skim</span>
+      </div>
+    </div>
+
+    <div style="display:flex;gap:26px;margin-top:14px;padding:12px 0;border-top:2px solid #3d3a35;border-bottom:2px solid #3d3a35">
+      <div><div style="font:15px ui-monospace,monospace;color:#8e8a82">MY ROLE</div><div style="font:20px 'Patrick Hand';color:#3d3a35">Lead designer</div></div>
+      <div><div style="font:15px ui-monospace,monospace;color:#8e8a82">TEAM</div><div style="font:20px 'Patrick Hand';color:#3d3a35">2 eng, 1 PM</div></div>
+      <div><div style="font:15px ui-monospace,monospace;color:#8e8a82">WHEN</div><div style="font:20px 'Patrick Hand';color:#3d3a35">2024, 4 months</div></div>
+      <div><div style="font:15px ui-monospace,monospace;color:#8e8a82">OUTCOME</div><div style="font:20px 'Patrick Hand';color:#3d3a35">{{ bOutcome }}</div></div>
+    </div>
+
+    <sc-if value="{{ bSkim }}" hint-placeholder-val="{{ false }}">
+      <div style="margin-top:20px;display:flex;flex-direction:column;gap:12px">
+        <div style="display:flex;gap:14px;align-items:flex-start"><div style="font:15px ui-monospace,monospace;color:#8e8a82;width:110px;flex:none;padding-top:4px">PROBLEM</div><div style="font:21px/1.35 'Patrick Hand';color:#3d3a35;flex:1">{{ bSkimProblem }}</div></div>
+        <div style="border-top:2px dashed #ddd9d1"></div>
+        <div style="display:flex;gap:14px;align-items:flex-start"><div style="font:15px ui-monospace,monospace;color:#8e8a82;width:110px;flex:none;padding-top:4px">WHAT I DID</div><div style="font:21px/1.35 'Patrick Hand';color:#3d3a35;flex:1">{{ bSkimDid }}</div></div>
+        <div style="border-top:2px dashed #ddd9d1"></div>
+        <div style="display:flex;gap:14px;align-items:flex-start"><div style="font:15px ui-monospace,monospace;color:#8e8a82;width:110px;flex:none;padding-top:4px">RESULT</div><div style="font:21px/1.35 'Patrick Hand';color:#3d3a35;flex:1">{{ bSkimResult }}</div></div>
+        <div onClick="{{ bToggleSkim }}" style="font:20px 'Patrick Hand';color:#3d3a35;text-decoration:underline;cursor:pointer;margin-top:6px">Read the full story →</div>
+      </div>
+    </sc-if>
+
+    <sc-if value="{{ bFull }}" hint-placeholder-val="{{ true }}">
+    <div>
+      <div style="margin-top:24px;border:2px solid #b9b5ac;background:linear-gradient(to top right,transparent calc(50% - 1.5px),#cfcbc2 50%,transparent calc(50% + 1.5px)),linear-gradient(to bottom right,transparent calc(50% - 1.5px),#cfcbc2 50%,transparent calc(50% + 1.5px));height:230px;display:flex;align-items:flex-end;justify-content:center;padding-bottom:8px"><span style="font:13px ui-monospace,monospace;color:#8e8a82;background:#fff;padding:0 5px">hero: final screen</span></div>
+
+      <div style="display:flex;gap:22px;margin-top:28px">
+        <div style="width:110px;flex:none;font:15px ui-monospace,monospace;color:#8e8a82;padding-top:6px">01 PROBLEM</div>
+        <div style="flex:1">
+          <div style="font:700 26px Gaegu,cursive;color:#2f2c28">{{ bProblemHead }}</div>
+          <div style="font:21px/1.5 'Patrick Hand';color:#5c584f;margin-top:6px;max-width:560px;text-wrap:pretty">{{ bProblemBody }}</div>
+        </div>
+      </div>
+
+      <div style="display:flex;gap:22px;margin-top:26px">
+        <div style="width:110px;flex:none;font:15px ui-monospace,monospace;color:#8e8a82;padding-top:6px">02 RESEARCH</div>
+        <div style="flex:1">
+          <div style="font:700 26px Gaegu,cursive;color:#2f2c28">{{ bResearchHead }}</div>
+          <div style="font:21px/1.5 'Patrick Hand';color:#5c584f;margin-top:6px;max-width:560px;text-wrap:pretty">{{ bResearchBody }}</div>
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:14px">
+            <div style="height:130px;border:2px solid #b9b5ac;background:linear-gradient(to top right,transparent calc(50% - 1.5px),#cfcbc2 50%,transparent calc(50% + 1.5px)),linear-gradient(to bottom right,transparent calc(50% - 1.5px),#cfcbc2 50%,transparent calc(50% + 1.5px));display:flex;align-items:flex-end;justify-content:center;padding-bottom:6px"><span style="font:12px ui-monospace,monospace;color:#8e8a82;background:#fff;padding:0 4px">affinity map</span></div>
+            <div style="height:130px;border:2px solid #b9b5ac;background:linear-gradient(to top right,transparent calc(50% - 1.5px),#cfcbc2 50%,transparent calc(50% + 1.5px)),linear-gradient(to bottom right,transparent calc(50% - 1.5px),#cfcbc2 50%,transparent calc(50% + 1.5px));display:flex;align-items:flex-end;justify-content:center;padding-bottom:6px"><span style="font:12px ui-monospace,monospace;color:#8e8a82;background:#fff;padding:0 4px">journey map</span></div>
+          </div>
+        </div>
+      </div>
+
+      <div style="display:flex;gap:22px;margin-top:26px">
+        <div style="width:110px;flex:none;font:15px ui-monospace,monospace;color:#8e8a82;padding-top:6px">03 DESIGN</div>
+        <div style="flex:1">
+          <div style="font:700 26px Gaegu,cursive;color:#2f2c28">{{ bDesignHead }}</div>
+          <div style="font:21px/1.5 'Patrick Hand';color:#5c584f;margin-top:6px;max-width:560px;text-wrap:pretty">{{ bDesignBody }}</div>
+          <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:12px;margin-top:14px">
+            <div style="height:120px;border:2px solid #b9b5ac;background:linear-gradient(to top right,transparent calc(50% - 1.5px),#cfcbc2 50%,transparent calc(50% + 1.5px)),linear-gradient(to bottom right,transparent calc(50% - 1.5px),#cfcbc2 50%,transparent calc(50% + 1.5px));display:flex;align-items:flex-end;justify-content:center;padding-bottom:6px"><span style="font:12px ui-monospace,monospace;color:#8e8a82;background:#fff;padding:0 4px">v1 sketch</span></div>
+            <div style="height:120px;border:2px solid #b9b5ac;background:linear-gradient(to top right,transparent calc(50% - 1.5px),#cfcbc2 50%,transparent calc(50% + 1.5px)),linear-gradient(to bottom right,transparent calc(50% - 1.5px),#cfcbc2 50%,transparent calc(50% + 1.5px));display:flex;align-items:flex-end;justify-content:center;padding-bottom:6px"><span style="font:12px ui-monospace,monospace;color:#8e8a82;background:#fff;padding:0 4px">v2 tested</span></div>
+            <div style="height:120px;border:2px solid #b9b5ac;background:linear-gradient(to top right,transparent calc(50% - 1.5px),#cfcbc2 50%,transparent calc(50% + 1.5px)),linear-gradient(to bottom right,transparent calc(50% - 1.5px),#cfcbc2 50%,transparent calc(50% + 1.5px));display:flex;align-items:flex-end;justify-content:center;padding-bottom:6px"><span style="font:12px ui-monospace,monospace;color:#8e8a82;background:#fff;padding:0 4px">final</span></div>
+          </div>
+          <div style="border-left:4px solid #b9b5ac;padding:6px 0 6px 14px;margin-top:16px;font:21px/1.4 'Patrick Hand';color:#5c584f">{{ bQuote }}</div>
+        </div>
+      </div>
+
+      <div style="display:flex;gap:22px;margin-top:26px">
+        <div style="width:110px;flex:none;font:15px ui-monospace,monospace;color:#8e8a82;padding-top:6px">04 RESULT</div>
+        <div style="flex:1">
+          <div style="font:700 26px Gaegu,cursive;color:#2f2c28">{{ bResultHead }}</div>
+          <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:12px">
+            <div style="border:3px solid #3d3a35;border-radius:6px;padding:12px;text-align:center;box-shadow:3px 3px 0 #e2ded6"><div style="font:700 36px Gaegu,cursive;color:#2f2c28">{{ bM1 }}</div><div style="font:18px 'Patrick Hand';color:#6b675e">{{ bM1L }}</div></div>
+            <div style="border:3px solid #3d3a35;border-radius:6px;padding:12px;text-align:center;box-shadow:3px 3px 0 #e2ded6"><div style="font:700 36px Gaegu,cursive;color:#2f2c28">{{ bM2 }}</div><div style="font:18px 'Patrick Hand';color:#6b675e">{{ bM2L }}</div></div>
+            <div style="border:3px solid #3d3a35;border-radius:6px;padding:12px;text-align:center;box-shadow:3px 3px 0 #e2ded6"><div style="font:700 36px Gaegu,cursive;color:#2f2c28">{{ bM3 }}</div><div style="font:18px 'Patrick Hand';color:#6b675e">{{ bM3L }}</div></div>
+          </div>
+          <div style="font:19px 'Patrick Hand';color:#8e8a82;margin-top:10px">{{ bMethod }}</div>
+          <div style="font:700 24px Gaegu,cursive;color:#2f2c28;margin-top:20px">What I'd do differently</div>
+          <div style="font:21px/1.5 'Patrick Hand';color:#5c584f;margin-top:4px;max-width:560px;text-wrap:pretty">{{ bLearn }}</div>
+        </div>
+      </div>
+
+      <div style="display:flex;gap:14px;margin-top:30px;padding-top:22px;border-top:2px solid #3d3a35">
+        <div onClick="{{ bGoOther }}" style="border:3px solid #3d3a35;border-radius:6px;padding:11px 22px;font:700 21px Gaegu,cursive;color:#2f2c28;background:#f1efe9;cursor:pointer;box-shadow:3px 3px 0 #cdc9c0">{{ bNextLabel }}</div>
+        
+      </div>
+    </div>
+    </sc-if>
+  </div>
+</div>
+</sc-if>
+
+<sc-if value="{{ bAbout }}">
+<div style="padding:28px 26px 40px">
+  <div onClick="{{ bGoHome }}" style="font:18px 'Patrick Hand';color:#6b675e;cursor:pointer;text-decoration:underline">← All work</div>
+  <div style="display:flex;gap:26px;margin-top:14px">
+    <div style="flex:1">
+      <div style="font: 700 36px Gaegu,cursive; color: #2f2c28; width: 523px; height: 90px">Seven years of asking people what they actually do</div>
+      <div style="font:21px/1.5 'Patrick Hand';color:#5c584f;margin-top:10px;max-width:520px;text-wrap:pretty">I work in product management, UX, and strategy. I run research, draw screens, work with development teams, and stay through the pilot — which is why every project here ends with a number.</div>
+      
+      <div style="font: 700 36px Gaegu,cursive; color: #2f2c28; width: 518px; height: 64px; font-size: 24px"><br>Wow, you made it here! Want to learn more?</div><div style="display:flex;flex-direction:column;gap:10px;margin-top:10px">
+        <div onClick="{{ bGoP1 }}" style="display:flex;gap:12px;align-items:center;border:2px solid #b9b5ac;border-radius:6px;padding:10px 12px;cursor:pointer"><span style="font:15px ui-monospace,monospace;color:#8e8a82">01</span><span style="font:20px 'Patrick Hand';color:#3d3a35;flex:1">Hobbies, crafts, and hidden talents</span><span style="font:20px 'Patrick Hand';color:#6b675e">→</span></div><div onClick="{{ bGoP1 }}" style="display:flex;gap:12px;align-items:center;border:2px solid #b9b5ac;border-radius:6px;padding:10px 12px;cursor:pointer"><span style="font: 15px ui-monospace, monospace; color: rgb(142, 138, 130);">02</span><span style="font: 20px &quot;Patrick Hand&quot;; color: rgb(61, 58, 53); flex: 1 1 0%;">The lollipop coupon hidden in terms and conditions... :)</span><span style="font: 20px &quot;Patrick Hand&quot;; color: rgb(107, 103, 94);">→</span></div>
+        
+      </div>
+    </div>
+    <div style="width:200px;flex:none">
+      <div style="height:200px;border:2px solid #b9b5ac;background:linear-gradient(to top right,transparent calc(50% - 1.5px),#cfcbc2 50%,transparent calc(50% + 1.5px)),linear-gradient(to bottom right,transparent calc(50% - 1.5px),#cfcbc2 50%,transparent calc(50% + 1.5px));display:flex;align-items:flex-end;justify-content:center;padding-bottom:8px"><span style="font:12px ui-monospace,monospace;color:#8e8a82;background:#fff;padding:0 4px">portrait</span></div>
+      <div style="border:3px solid #3d3a35;border-radius:6px;padding:9px;text-align:center;font:700 20px Gaegu,cursive;color:#2f2c28;background:#f1efe9;cursor:pointer;margin-top:14px;box-shadow:3px 3px 0 #cdc9c0">Download resume</div>
+      <div style="border:3px solid #b9b5ac;border-radius:6px;padding:9px;text-align:center;font:700 20px Gaegu,cursive;color:#6b675e;cursor:pointer;margin-top:10px">Email Sarah</div>
+      <div style="font:17px/1.4 'Patrick Hand';color:#8e8a82;margin-top:12px">Washington, DC · open to remote</div>
+    </div>
+  </div>
+</div>
+</sc-if>
+
+</div>
+<div style="display:flex;align-items:center;gap:10px;padding:8px 14px;background:#dedbd4;border-top:2px solid #3d3a35;font:14px ui-monospace,monospace;color:#5c584f">
+<span>screen:</span><span style="background:#fff;border:2px solid #3d3a35;border-radius:4px;padding:1px 8px">{{ bScreenName }}</span>
+<span style="margin-left:auto;cursor:pointer;text-decoration:underline" onClick="{{ bGoHome }}">restart prototype</span>
+</div>
+</div>
+</div>
+
+</div>
+<p class="dv-next">Try next: "give <a class="dv-oid" href="#1a">1a</a> a left sticky rail instead of tabs" · "add the decision-capture widget to <a class="dv-oid" href="#1b">1b</a>" · "make a mobile version of <a class="dv-oid" href="#1b">1b</a>"</p>
+</section>
+
+<section class="dv-turn" id="notes">
+<div class="dv-thd"><a class="dv-tid" href="#notes">ⓘ</a><span class="dv-tname">How these map to your test plan</span></div>
+<div style="display:flex;flex-wrap:wrap;gap:20px;max-width:1200px">
+  <div style="flex:1 1 340px;background:#fff;border:1px solid rgba(0,0,0,.12);border-radius:8px;padding:18px 20px">
+    <div style="font:600 12px ui-monospace,monospace;color:#8e8a82;margin-bottom:8px">INDEPENDENT VARIABLE</div>
+    <div style="font:17px/1.5 'Patrick Hand';color:#3d3a35">Two things differ, and only two: the <b>cover</b> (splash gate vs. scroll hero with work visible) and the <b>case-study structure</b> (tabbed Problem/Process/Result vs. one linear narrative). Nav, copy, metrics, and the skim toggle are held constant so Task 1 and Task 2/3 results are attributable.</div>
+  </div>
+  <div style="flex:1 1 340px;background:#fff;border:1px solid rgba(0,0,0,.12);border-radius:8px;padding:18px 20px">
+    <div style="font:600 12px ui-monospace,monospace;color:#8e8a82;margin-bottom:8px">WHAT EACH TASK TOUCHES</div>
+    <div style="font:17px/1.6 'Patrick Hand';color:#3d3a35">T1 role &amp; relevance → cover. T2 problem &amp; contribution → case study opening + role strip. T3 outcome evidence → Result tab vs. section 04. T4 second project → end-of-study next-project button + nav. T5 background → About, which links back to project evidence in <a class="dv-oid" href="#1b">1b</a>. T6 decision is moderator-captured, per your call.</div>
+  </div>
+  <div style="flex:1 1 340px;background:#fff;border:1px solid rgba(0,0,0,.12);border-radius:8px;padding:18px 20px">
+    <div style="font:600 12px ui-monospace,monospace;color:#8e8a82;margin-bottom:8px">ASSUMPTIONS I MADE</div>
+    <div style="font:17px/1.6 'Patrick Hand';color:#3d3a35">Project content is invented placeholder — swap in your real work before testing. Third project is drawn as an empty slot so the "at least 3 projects" success criterion is visible without faking content. Greyscale only, sketch font, X-boxes for imagery: nothing here should read as a visual-design decision to a participant.</div>
+  </div>
+</div>
+</section>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{}">
+class Component extends DCLogic {
+  state = { a: 'cover', aProj: 1, aTab: 'problem', aSkim: false, b: 'home', bProj: 1, bSkim: false };
+
+  set(k, v) { this.setState({ [k]: v }); }
+
+  renderVals() {
+    const s = this.state;
+    const aP1 = s.aProj === 1;
+    const aNames = { cover: 'A / cover (splash gate)', work: 'A / all work', proj: aP1 ? 'A / project 01' : 'A / project 02', about: 'A / about' };
+    const bNames = { home: 'B / cover + work (one scroll)', proj: s.bProj === 1 ? 'B / project 01' : 'B / project 02', about: 'B / about' };
+    const sel = '#e6e3dc', off = '#fff';
+    const bP1 = s.bProj === 1;
+    return {
+      aCover: s.a === 'cover', aWork: s.a === 'work', aProj: s.a === 'proj', aAbout: s.a === 'about',
+      aScreenName: aNames[s.a],
+      aGoCover: () => this.setState({ a: 'cover', aSkim: false, aTab: 'problem' }),
+      aGoWork: () => this.set('a', 'work'),
+      aGoP1: () => this.setState({ a: 'proj', aProj: 1, aTab: 'problem' }),
+      aGoP2: () => this.setState({ a: 'proj', aProj: 2, aTab: 'problem' }),
+      aGoAbout: () => this.set('a', 'about'),
+      aTabProblem: () => this.set('aTab', 'problem'),
+      aTabProcess: () => this.set('aTab', 'process'),
+      aTabResult: () => this.set('aTab', 'result'),
+      aOnProblem: s.aTab === 'problem', aOnProcess: s.aTab === 'process', aOnResult: s.aTab === 'result',
+      aBgProblem: s.aTab === 'problem' ? sel : off,
+      aBgProcess: s.aTab === 'process' ? sel : off,
+      aBgResult: s.aTab === 'result' ? sel : off,
+      aSkim: s.aSkim, aFull: !s.aSkim, aSkimMark: s.aSkim ? '\u2713' : '',
+      aToggleSkim: () => this.set('aSkim', !s.aSkim),
+      aTitle: aP1 ? '01 \u2014 Field scheduling, rebuilt' : '02 \u2014 First-week onboarding',
+      aSub: aP1 ? 'Enterprise dispatch tool, 400 field techs' : 'Mobile signup flow, consumer app',
+      aSkimProblem: aP1 ? 'Dispatchers re-entered every job by hand each morning.' : 'Signups stalled before the first useful action.',
+      aSkimDid: aP1 ? 'Ride-alongs, service map, 3 tested layouts, one pilot depot.' : 'Cut 2 steps, tested a 5-screen flow with 12 new users.',
+      aSkimResult: aP1 ? '\u221252% rework time; 9 of 11 depots opted in voluntarily.' : '+31% activation in week one; support tickets down 18%.',
+      aProblemHead: aP1 ? 'Dispatchers rebuilt the schedule every morning' : 'People signed up and then stopped',
+      aProblemBody: aP1 ? '400 field techs, one whiteboard, and a spreadsheet nobody trusted. Every change meant three phone calls.' : 'Signup completion was fine; activation was not. Most new accounts never reached the action that made the product make sense.',
+      aB1: aP1 ? '2.5 hrs/day spent re-entering the same jobs' : 'Only 34% reached the first useful action',
+      aB2: aP1 ? '1 in 5 techs arrived at the wrong site' : 'Two steps caused most of the drop-off',
+      aB3: aP1 ? 'Constraint: dispatchers refused a new login' : 'Constraint: legal required the permissions ask',
+      aProblemCap: aP1 ? 'photo: the whiteboard' : 'screens: old signup flow',
+      aProcessHead: aP1 ? 'Four weeks, ride-alongs first' : 'Six weeks, watching people meet it cold',
+      aS1: aP1 ? '1. Ride-alongs' : '1. First-run tests',
+      aS1b: aP1 ? '6 dispatchers, 2 depots' : '12 brand-new users',
+      aS2: aP1 ? '2. Service map' : '2. Drop-off map',
+      aS2b: aP1 ? 'Where trust broke' : 'Where people quit',
+      aS3: aP1 ? '3. Wireframes' : '3. Flow rewrite',
+      aS3b: aP1 ? '3 layouts, tested' : '7 screens down to 5',
+      aS4: aP1 ? '4. Pilot' : '4. A/B test',
+      aS4b: aP1 ? 'One depot, 3 weeks' : 'n=1,840, 2 weeks',
+      aQuote: aP1 ? 'What changed my mind: dispatchers didn\'t want automation, they wanted to see the consequence of a change before committing it.' : 'What changed my mind: the permissions ask wasn\'t too early in the flow \u2014 it was just unexplained. Moving it to the point of use fixed it.',
+      aResultHead: aP1 ? 'Rework halved, adoption without a mandate' : 'Activation up, support load down',
+      aM1: aP1 ? '\u221252%' : '+31%', aM1L: aP1 ? 'daily re-entry time' : 'week-one activation',
+      aM2: aP1 ? '4\u21921' : '\u221218%', aM2L: aP1 ? 'calls per change' : 'onboarding tickets',
+      aM3: aP1 ? '9/11' : '5\u21923', aM3L: aP1 ? 'depots opted in' : 'steps to first action',
+      aMethod: aP1 ? 'Measured against a 3-week baseline before pilot. Source: dispatch logs.' : 'Two-week A/B against the previous flow, n=1,840. Source: product analytics.',
+      aGoOther: () => this.setState({ a: 'proj', aProj: aP1 ? 2 : 1, aTab: 'problem' }),
+      aNextLabel: aP1 ? 'Next project: Onboarding flow \u2192' : 'Next project: Field scheduling \u2192',
+
+      bHome: s.b === 'home', bProj: s.b === 'proj', bAbout: s.b === 'about',
+      bScreenName: bNames[s.b],
+      bGoHome: () => this.setState({ b: 'home', bSkim: false }),
+      bGoP1: () => this.setState({ b: 'proj', bProj: 1 }),
+      bGoP2: () => this.setState({ b: 'proj', bProj: 2 }),
+      bGoOther: () => this.setState({ b: 'proj', bProj: bP1 ? 2 : 1 }),
+      bGoAbout: () => this.set('b', 'about'),
+      bSkim: s.bSkim, bFull: !s.bSkim, bSkimMark: s.bSkim ? '\u2713' : '',
+      bToggleSkim: () => this.set('bSkim', !s.bSkim),
+      bKicker: bP1 ? 'PROJECT 01 \u00b7 ENTERPRISE TOOL' : 'PROJECT 02 \u00b7 MOBILE',
+      bTitle: bP1 ? 'Field scheduling, rebuilt' : 'First-week onboarding',
+      bSub: bP1 ? 'Dispatch tool for 400 field technicians' : 'Signup flow for a consumer mobile app',
+      bOutcome: bP1 ? '\u221252% rework' : '+31% activation',
+      bSkimProblem: bP1 ? 'Dispatchers re-entered every job by hand each morning; 1 in 5 techs went to the wrong site.' : 'Most signups never reached the first useful action.',
+      bSkimDid: bP1 ? 'Rode along with 6 dispatchers, mapped where trust broke, tested 3 layouts, piloted one depot for 3 weeks.' : 'Removed 2 steps, rebuilt the flow to 5 screens, tested with 12 brand-new users.',
+      bSkimResult: bP1 ? 'Re-entry time halved and 9 of 11 depots adopted it without a mandate.' : 'Week-one activation up 31%; onboarding support tickets down 18%.',
+      bProblemHead: bP1 ? 'The schedule was rebuilt by hand every morning' : 'People signed up and then stopped',
+      bProblemBody: bP1 ? '400 techs, one whiteboard, and a spreadsheet nobody trusted. Every change meant three phone calls, and 1 in 5 techs arrived at the wrong site. The constraint: dispatchers would not accept another login.' : 'Signup completion was fine; activation was not. Most new accounts never reached the one action that made the product make sense, and nobody could say which step lost them.',
+      bResearchHead: bP1 ? 'I rode along before I drew anything' : 'I watched 12 people meet the product cold',
+      bResearchBody: bP1 ? 'Six dispatchers across two depots, one full shift each. The pattern was not laziness \u2014 it was that no one could see the consequence of a change before committing to it.' : 'Unmoderated first-run sessions plus 5 interviews. Two steps did all the damage: a permissions ask with no context, and an empty state that offered no first move.',
+      bDesignHead: bP1 ? 'Three layouts, one that showed consequences' : 'Five screens, each earning its place',
+      bDesignBody: bP1 ? 'The winning layout previewed the ripple effect of a reassignment before saving. Tested against two alternatives with the same six dispatchers.' : 'Every screen had to justify itself against the activation moment. The permissions ask moved to the point of use; the empty state became a first task.',
+      bQuote: bP1 ? '"Don\'t automate it \u2014 just let me see what breaks before I hit save." \u2014 dispatcher, depot 3' : '"I didn\'t know why it wanted my contacts, so I closed it." \u2014 participant 7',
+      bResultHead: bP1 ? 'Rework halved, adopted without a mandate' : 'Activation up, tickets down',
+      bM1: bP1 ? '\u221252%' : '+31%', bM1L: bP1 ? 'daily re-entry time' : 'week-one activation',
+      bM2: bP1 ? '4\u21921' : '\u221218%', bM2L: bP1 ? 'calls per change' : 'onboarding tickets',
+      bM3: bP1 ? '9/11' : '5\u21923', bM3L: bP1 ? 'depots opted in' : 'steps to first action',
+      bMethod: bP1 ? 'Measured against a 3-week pre-pilot baseline. Source: dispatch logs.' : 'Two-week A/B against the previous flow, n=1,840. Source: product analytics.',
+      bLearn: bP1 ? 'I tested with dispatchers but not with techs until late. The mobile view needed two more rounds it never got.' : 'I optimized the first session and ignored day seven. Retention needed its own study.',
+      bNextLabel: bP1 ? 'Next project: First-week onboarding \u2192' : 'Next project: Field scheduling \u2192',
+    };
+  }
+}
+</script>
+</body>
+</html>

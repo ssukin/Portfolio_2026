@@ -1,0 +1,946 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet data-dc-atomics="">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&amp;family=IBM+Plex+Mono:wght@400;500&amp;family=IBM+Plex+Sans:wght@300;400;500;600&amp;display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box}
+body{margin:0;background:#F7F4EF;color:#1A1714;font-family:"IBM Plex Sans",system-ui,sans-serif;font-weight:300;-webkit-font-smoothing:antialiased}
+a{color:#1A1714;text-decoration:none}a:hover{color:#B5502F}
+::selection{background:#E9D8CF}
+@keyframes ss-walk{from{transform:translateX(-190px)}to{transform:translateX(0)}}
+@keyframes ss-bob{0%,100%{transform:translateY(0)}50%{transform:translateY(-3px)}}
+@keyframes ss-step-a{0%,100%{transform:rotate(20deg)}50%{transform:rotate(-20deg)}}
+@keyframes ss-step-b{0%,100%{transform:rotate(-20deg)}50%{transform:rotate(20deg)}}
+@keyframes ss-legs-sit{to{transform:rotate(11deg)}}
+@keyframes ss-arm-swing{0%,100%{transform:rotate(14deg)}50%{transform:rotate(-14deg)}}
+@keyframes ss-wave{0%{transform:rotate(6deg)}18%{transform:rotate(-150deg)}36%{transform:rotate(-172deg)}54%{transform:rotate(-146deg)}72%{transform:rotate(-170deg)}100%{transform:rotate(4deg)}}
+@keyframes ss-sit{to{transform:translateY(64px)}}
+@keyframes ss-hi{0%{opacity:0;transform:translateY(6px) scale(.9)}18%{opacity:1;transform:translateY(0) scale(1)}80%{opacity:1}100%{opacity:0;transform:translateY(-4px) scale(1)}}
+@keyframes ss-shadow-out{to{opacity:0}}
+@media (prefers-reduced-motion:reduce){
+  [data-ss-char] *{animation:none!important}
+  [data-ss-char]{animation:none!important}
+}
+</style>
+</helmet>
+
+<div style="min-height:100vh;background:#F7F4EF">
+
+<div style="position:sticky;top:0;z-index:20;background:rgba(247,244,239,.92);backdrop-filter:blur(12px);border-bottom:1px solid #E7E0D5">
+  <div style="max-width:1180px;margin:0 auto;padding:0 clamp(20px,4vw,56px);height:66px;display:flex;align-items:center;justify-content:space-between;gap:20px">
+    <div onClick="{{ goHome }}" style="display:flex;align-items:center;gap:11px;cursor:pointer">
+      <div style="width:26px;height:26px;border-radius:50%;background:{{ accent }};flex:none"></div>
+      <div style="font-family:'IBM Plex Mono',monospace;font-size:13px;letter-spacing:.18em;font-weight:500">SARAH SUKIN</div>
+    </div>
+    <div style="display:flex;align-items:center;gap:clamp(18px,3vw,34px);font-size:14px;letter-spacing:.02em">
+      <span onClick="{{ goHome }}" style="cursor:pointer;padding-bottom:2px;border-bottom:1px solid {{ navWorkLine }}">Work</span>
+      <span onClick="{{ goAbout }}" style="cursor:pointer;padding-bottom:2px;border-bottom:1px solid {{ navAboutLine }}">About</span>
+      <a href="mailto:sarahsukin@gmail.com?subject=Sarah's%20Portfolio" style="border:1px solid #1A1714;border-radius:100px;padding:7px 18px;font-size:13px;letter-spacing:.02em;white-space:nowrap">Get in touch</a>
+    </div>
+  </div>
+</div>
+
+<sc-if value="{{ onHome }}" hint-placeholder-val="{{ true }}">
+<div>
+
+  <div style="max-width:1180px;margin:0 auto;padding:clamp(56px,9vw,120px) clamp(20px,4vw,56px) clamp(40px,6vw,72px)">
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:clamp(28px,5vw,64px);align-items:center">
+      <div style="min-width:0">
+        <div style="font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:.2em;color:#6E6558">MANAGER — PRODUCT STRATEGY &amp; UX DESIGN</div>
+        <h1 style="font-family: 'Instrument Serif',serif; font-weight: 400; font-size: clamp(38px,4.8vw,64px); line-height: 1.04; letter-spacing: -.015em; margin: 22px 0 0; max-width: 18ch; text-wrap: balance; position: relative">I make complex systems intuitive.</h1>
+        <p style="margin:20px 0 0;font-size:clamp(16px,1.5vw,19px);line-height:1.65;color:#4A423A;max-width:44ch;text-wrap:pretty">I lead cross-functional teams that deliver value-driven platform experiences from roadmap to execution.<br></p>
+        <div style="margin-top:26px;font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.16em;color:#6E6558">OPEN TO DESIGN &amp; STRATEGY ROLES</div>
+        <div style="display:flex;flex-wrap:wrap;gap:10px;margin-top:14px">
+          <a href="https://www.sarahsukin.com/_files/ugd/7edf48_5a373e72ee694ea997855fe80b09aea4.pdf" target="_blank" rel="noopener" style="border:1px solid #1A1714;border-radius:3px;padding:11px 16px;font-size:14.5px;display:flex;align-items:center;gap:12px"><span>Download resume</span><span style="color:#6E6558">↓</span></a>
+          <a href="mailto:sarahsukin@gmail.com?subject=Sarah's%20Portfolio" style="border:1px solid #DCD4C8;border-radius:3px;padding:11px 16px;font-size:14.5px;display:flex;align-items:center;gap:12px;color:#4A423A"><span>Get in touch</span><span style="color:#6E6558">→</span></a>
+        </div>
+      </div>
+      <div style="min-width:0;border-radius:3px;overflow:hidden;background:#EDEDEA"><img src="assets/sarah.jpg" alt="Portrait of Sarah Sukin" style="width:100%;display:block"></div>
+    </div>
+  </div>
+
+  <div style="max-width:1180px;margin:0 auto;padding:0 clamp(20px,4vw,56px) clamp(60px,8vw,110px)">
+    <div style="display:flex;align-items:baseline;justify-content:space-between;gap:16px;padding-bottom:16px;border-bottom:1px solid #1A1714">
+      <div style="font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:.2em">SELECTED WORK</div>
+      <div style="font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:.14em;color:#6E6558">2023 — 2026</div>
+    </div>
+
+    <div onClick="{{ goP1 }}" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:clamp(22px,4vw,54px);align-items:center;padding:clamp(28px,4vw,44px) 0;border-bottom:1px solid #E3DCD1;cursor:pointer">
+      <div style="order:2;min-width:0">
+        <div style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.18em;color:{{ accent }}">01 &nbsp;/&nbsp; ENTERPRISE PLATFORM</div>
+        <h2 style="font-family:'Instrument Serif',serif;font-weight:400;font-size:clamp(28px,3.4vw,42px);line-height:1.1;margin:12px 0 0">Delivery Resource Platform</h2>
+        <p style="margin:12px 0 0;font-size:16px;line-height:1.6;color:#4A423A;max-width:46ch;text-wrap:pretty">Teams were reinventing the wheel because nobody knew who to ask or what already existed. I built the company-wide home for experts, code, and collateral.</p>
+        <div style="display:flex;flex-wrap:wrap;gap:10px;margin-top:18px">
+          <span style="border:1px solid #DCD4C8;border-radius:100px;padding:5px 13px;font-size:12.5px;color:#4A423A">Top-10 most-used link, year one</span>
+          <span style="border:1px solid #DCD4C8;border-radius:100px;padding:5px 13px;font-size:12.5px;color:#4A423A">4× contributed content</span>
+        </div>
+        <div style="margin-top:22px;font-size:14px;letter-spacing:.02em;border-bottom:1px solid {{ accent }};display:inline-block;padding-bottom:3px;color:{{ accent }}">Read the case study</div>
+      </div>
+      <div style="order:1;min-width:0;border:1px solid #E3DCD1;border-radius:4px;overflow:hidden;background:#fff">
+        <div style="height:26px;background:#F1EBE2;border-bottom:1px solid #E7E0D5;display:flex;align-items:center;gap:5px;padding:0 10px"><div style="width:7px;height:7px;border-radius:50%;background:#D6CCBE"></div><div style="width:7px;height:7px;border-radius:50%;background:#D6CCBE"></div><div style="width:7px;height:7px;border-radius:50%;background:#D6CCBE"></div></div>
+        <div style="height:clamp(190px,22vw,265px);overflow:hidden"><img src="assets/drp-home.png" alt="Delivery Resource Platform home page" style="width:100%;display:block"></div>
+      </div>
+    </div>
+
+    <div onClick="{{ goP2 }}" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:clamp(22px,4vw,54px);align-items:center;padding:clamp(28px,4vw,44px) 0;border-bottom:1px solid #E3DCD1;cursor:pointer">
+      
+      <div style="min-width:0;border:1px solid #E3DCD1;border-radius:4px;overflow:hidden;background:#fff">
+        <div style="height:26px;background:#F1EBE2;border-bottom:1px solid #E7E0D5;display:flex;align-items:center;gap:5px;padding:0 10px"><div style="width:7px;height:7px;border-radius:50%;background:#D6CCBE"></div><div style="width:7px;height:7px;border-radius:50%;background:#D6CCBE"></div><div style="width:7px;height:7px;border-radius:50%;background:#D6CCBE"></div></div>
+        <div style="height:clamp(190px,22vw,265px);overflow:hidden"><img src="assets/bill-mybill.png" alt="Billing system My Bill dashboard" style="width:100%;display:block"></div>
+      </div><div style="min-width:0">
+        <div style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.18em;color:{{ accent }}">02 &nbsp;/&nbsp; FEDERAL / FINANCE</div>
+        <h2 style="font-family:'Instrument Serif',serif;font-weight:400;font-size:clamp(28px,3.4vw,42px);line-height:1.1;margin:12px 0 0">Demystifying Billing</h2>
+        <p style="margin:12px 0 0;font-size:16px;line-height:1.6;color:#4A423A;max-width:46ch;text-wrap:pretty">People were paying invoices they couldn't read. I rebuilt the bill around one question: why is this number what it is?</p>
+        <div style="display:flex;flex-wrap:wrap;gap:10px;margin-top:18px">
+          <span style="border:1px solid #DCD4C8;border-radius:100px;padding:5px 13px;font-size:12.5px;color:#4A423A">2 Week Prototype</span>
+          <span style="border:1px solid #DCD4C8;border-radius:100px;padding:5px 13px;font-size:12.5px;color:#4A423A">Business Development&nbsp;</span>
+        </div>
+        <div style="margin-top:22px;font-size:14px;letter-spacing:.02em;border-bottom:1px solid {{ accent }};display:inline-block;padding-bottom:3px;color:{{ accent }}">Read the case study</div>
+      </div>
+    </div>
+
+    <div onClick="{{ goP3 }}" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:clamp(22px,4vw,54px);align-items:center;padding:clamp(28px,4vw,44px) 0;border-bottom:1px solid #E3DCD1;cursor:pointer">
+      <div style="min-width:0;border:1px solid #E3DCD1;border-radius:4px;overflow:hidden;background:#fff">
+        <div style="height:26px;background:#F1EBE2;border-bottom:1px solid #E7E0D5;display:flex;align-items:center;gap:5px;padding:0 10px"><div style="width:7px;height:7px;border-radius:50%;background:#D6CCBE"></div><div style="width:7px;height:7px;border-radius:50%;background:#D6CCBE"></div><div style="width:7px;height:7px;border-radius:50%;background:#D6CCBE"></div></div>
+        <div style="height:clamp(190px,22vw,265px);overflow:hidden"><img src="assets/p3-hero.png" alt="The new portfolio homepage" style="width:100%;height:100%;object-fit:cover;object-position:left top;display:block"></div>
+      </div><div style="min-width:0">
+        <div style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.18em;color:{{ accent }}">03 &nbsp;/&nbsp; PERSONAL PRODUCT</div>
+        <h2 style="font-family:'Instrument Serif',serif;font-weight:400;font-size:clamp(28px,3.4vw,42px);line-height:1.1;margin:12px 0 0">Rebuilding My Portfolio</h2>
+        <p style="margin:12px 0 0;font-size:16px;line-height:1.6;color:#4A423A;max-width:46ch;text-wrap:pretty">Hiring managers give each candidate a few minutes. I treated my portfolio like a product, tested two designs with real reviewers, and built what they asked for.</p>
+        <div style="display:flex;flex-wrap:wrap;gap:10px;margin-top:18px">
+          <span style="border:1px solid #DCD4C8;border-radius:100px;padding:5px 13px;font-size:12.5px;color:#4A423A">Navigation rated 10/10</span>
+          <span style="border:1px solid #DCD4C8;border-radius:100px;padding:5px 13px;font-size:12.5px;color:#4A423A">AI interview-prep agent</span>
+        </div>
+        <div style="margin-top:22px;font-size:14px;letter-spacing:.02em;border-bottom:1px solid {{ accent }};display:inline-block;padding-bottom:3px;color:{{ accent }}">Read the case study</div>
+      </div>
+    </div>
+
+    <div style="margin-top:clamp(48px,7vw,90px);border-top:1px solid #E3DCD1;padding-top:clamp(28px,4vw,44px);display:grid;grid-template-columns:minmax(0,1fr) auto;gap:clamp(20px,4vw,48px);align-items:end">
+      <div style="min-width:0">
+        
+        <div style="font-family: 'Instrument Serif',serif; font-size: clamp(20px,2.2vw,27px); line-height: 1.45; font-style: italic; color: #1A1714; text-wrap: pretty; margin-top: 14px; min-height: 4.4em; margin-bottom: 14px">{{ qText }}</div><div style="font-family:'IBM Plex Mono',monospace;font-size:11.5px;letter-spacing:.14em;color:#6E6558">{{ qWho }}</div>
+      </div>
+      <sc-if value="{{ manyQuotes }}" hint-placeholder-val="{{ false }}">
+      <div style="display:flex;align-items:center;gap:14px">
+        <div style="font-family:'IBM Plex Mono',monospace;font-size:11.5px;letter-spacing:.14em;color:#6E6558;white-space:nowrap">{{ qCount }}</div>
+        <div onClick="{{ qPrev }}" title="Previous quote" style="width:42px;height:42px;border:1px solid #DCD4C8;border-radius:50%;display:flex;align-items:center;justify-content:center;cursor:pointer;font-size:16px;color:#4A423A;transition:border-color .16s ease,color .16s ease" style-hover="border-color:#1A1714;color:#1A1714">←</div>
+        <div onClick="{{ qNext }}" title="Next quote" style="width:42px;height:42px;border:1px solid #DCD4C8;border-radius:50%;display:flex;align-items:center;justify-content:center;cursor:pointer;font-size:16px;color:#4A423A;transition:border-color .16s ease,color .16s ease" style-hover="border-color:#1A1714;color:#1A1714">→</div>
+      </div>
+      </sc-if>
+    </div>
+  </div>
+</div>
+</sc-if>
+
+<sc-if value="{{ onP1 }}">
+<div style="max-width:1180px;margin:0 auto;padding:clamp(30px,5vw,56px) clamp(20px,4vw,56px) clamp(60px,8vw,100px)">
+  <div onClick="{{ goHome }}" style="font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:.14em;color:#6E6558;cursor:pointer">← ALL WORK</div>
+
+  <div style="display:flex;flex-wrap:wrap;gap:24px;align-items:flex-end;justify-content:space-between;margin-top:26px">
+    <div style="min-width:0">
+      <div style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.18em;color:{{ accent }}">01 &nbsp;/&nbsp; ENTERPRISE PLATFORM</div>
+      <h1 style="font-family:'Instrument Serif',serif;font-weight:400;font-size:clamp(36px,5.6vw,68px);line-height:1.04;margin:14px 0 0;letter-spacing:-.01em">Delivery Resource Platform</h1>
+      <p style="margin:14px 0 0;font-size:clamp(16px,1.5vw,19px);line-height:1.55;color:#4A423A;max-width:52ch;text-wrap:pretty">Connecting experts and assets so client teams stop rebuilding what already exists.</p>
+    </div>
+    <div onClick="{{ toggleSkim }}" style="display:flex;align-items:center;gap:10px;border:1px solid #1A1714;border-radius:100px;padding:8px 16px;cursor:pointer;white-space:nowrap;background:{{ skimBg }};color:{{ skimFg }}">
+      <span style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.14em">60-SECOND SKIM</span>
+      <span style="width:26px;height:15px;border-radius:100px;border:1px solid currentColor;position:relative;display:inline-block"><span style="position:absolute;top:2px;left:{{ skimKnob }};width:9px;height:9px;border-radius:50%;background:currentColor;transition:left .18s ease"></span></span>
+    </div>
+  </div>
+
+  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:20px;margin-top:34px;padding:18px 0;border-top:1px solid #1A1714;border-bottom:1px solid #E3DCD1">
+    <div><div style="font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.16em;color:#6E6558">ROLE</div><div style="font-size:15px;margin-top:6px">Experience &amp; Strategy Manager</div></div>
+    <div><div style="font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.16em;color:#6E6558">WHEN</div><div style="font-size:15px;margin-top:6px">2023 – 2024</div></div>
+    <div><div style="font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.16em;color:#6E6558">TOOLS</div><div style="font-size:15px;margin-top:6px">Adobe XD, Illustrator, Salesforce</div></div>
+    <div><div style="font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.16em;color:#6E6558">OUTCOME</div><div style="font-size:15px;margin-top:6px;color:{{ accent }}">Top-10 link company-wide</div></div>
+  </div>
+
+  <sc-if value="{{ skim }}" hint-placeholder-val="{{ false }}">
+    <div style="margin-top:38px;display:flex;flex-direction:column;gap:0">
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:clamp(14px,3vw,40px);padding:22px 0;border-bottom:1px solid #E3DCD1">
+        <div style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.16em;color:#6E6558">SITUATION</div>
+        <div style="grid-column: span 2; font-size: 16px; line-height: 1.5; text-wrap: pretty">No central database. Knowledge sat in silos and employees didn't know who to call for a demo.</div>
+      </div>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:clamp(14px,3vw,40px);padding:22px 0;border-bottom:1px solid #E3DCD1">
+        <div style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.16em;color:#6E6558">WHAT I DID</div>
+        <div style="grid-column: span 2; font-size: 16px; line-height: 1.5; text-wrap: pretty">Comparative analysis and interviews, then a full platform prototype that I validated and iterated on with usability testing. I also configured the Salesforce environment.</div>
+      </div>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:clamp(14px,3vw,40px);padding:22px 0;border-bottom:1px solid #E3DCD1">
+        <div style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.16em;color:#6E6558">RESULT</div>
+        <div style="grid-column: span 2; font-size: 16px; line-height: 1.5; text-wrap: pretty">A top-10 most-visited link company-wide within a year, with contributed content up more than 4×.</div>
+      </div>
+      <div onClick="{{ toggleSkim }}" style="margin-top:24px;font-size:15px;border-bottom:1px solid #1A1714;align-self:flex-start;padding-bottom:3px;cursor:pointer">Read the full case study →</div>
+    </div>
+  </sc-if>
+
+  <sc-if value="{{ full }}" hint-placeholder-val="{{ true }}">
+  <div>
+    <div style="margin-top:36px;border:1px solid #E3DCD1;border-radius:4px;overflow:hidden;background:#fff">
+      <div style="height:30px;background:#F1EBE2;border-bottom:1px solid #E7E0D5;display:flex;align-items:center;gap:6px;padding:0 12px"><div style="width:8px;height:8px;border-radius:50%;background:#D6CCBE"></div><div style="width:8px;height:8px;border-radius:50%;background:#D6CCBE"></div><div style="width:8px;height:8px;border-radius:50%;background:#D6CCBE"></div></div>
+      <div style="max-height:clamp(320px,44vw,540px);overflow:hidden"><img src="assets/drp-home.png" alt="Platform home page design" style="width:100%;display:block"></div>
+    </div>
+    <div style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.12em;color:#6E6558;margin-top:10px">PLATFORM HOME — ASSETS, SOLUTIONS, PARTNERS, AND STORIES IN ONE PLACE</div>
+
+    <div style="display:grid;grid-template-columns:minmax(0,1fr);gap:0;margin-top:clamp(44px,6vw,80px)">
+
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:clamp(20px,4vw,56px);padding-top:26px;border-top:1px solid #1A1714">
+        <div><div style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.16em;color:{{ accent }};position:sticky;top:90px">01 &nbsp;SITUATION</div></div>
+        <div style="grid-column:span 2;min-width:0">
+          <h3 style="font-family: 'Instrument Serif',serif; font-weight: 400; font-size: clamp(24px,2.8vw,34px); line-height: 1.15; margin: 0; width: 535px; height: 94px">With no central database, teams were reinventing the wheel</h3>
+          <p style="margin:16px 0 0;font-size:16.5px;line-height:1.7;color:#4A423A;max-width:58ch;text-wrap:pretty">We wanted to connect experts and assets — code repositories, whitepapers, demos — to the teams who needed them. Employees didn't know who to contact, and knowledge stayed siloed inside the accounts that produced it.</p>
+          <div style="margin-top:24px;padding:20px 22px;background:#F1EBE2;border-radius:4px">
+            <div style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.16em;color:#6E6558">THE TASK</div>
+            <p style="margin:8px 0 0;font-size:16.5px;line-height:1.6;text-wrap:pretty">Develop a company-wide platform to leverage existing assets, accelerate delivery, and ensure clients receive the best solutions.</p>
+          </div>
+        </div>
+      </div>
+
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:clamp(20px,4vw,56px);padding-top:26px;margin-top:clamp(40px,5vw,64px);border-top:1px solid #E3DCD1">
+        <div><div style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.16em;color:{{ accent }};position:sticky;top:90px">02 &nbsp;RESEARCH</div></div>
+        <div style="grid-column:span 2;min-width:0">
+          
+          <h3 style="font-family: 'Instrument Serif',serif; font-weight: 400; font-size: clamp(24px,2.8vw,34px); line-height: 1.15; margin: 0">Experts, and their time, are the scarcest resource</h3><p style="margin:16px 0 0;font-size:16.5px;line-height:1.7;color:#4A423A;max-width:58ch;text-wrap:pretty"><b>Interviews </b>showed that people wanted whitepapers to learn on demand <em>before</em> booking time with a busy expert so the meeting was worth having, and identifying experts is not intuitive.</p>
+          <p style="margin:16px 0 0;font-size:16.5px;line-height:1.7;color:#4A423A;max-width:58ch;text-wrap:pretty">A <b>comparative analysis</b>&nbsp;identified standard features and materials for initial testing, as well as access methods on the market.</p><div style="border-left:2px solid {{ accent }};padding:4px 0 4px 20px;margin-top:26px">
+            <div style="font-family:'Instrument Serif',serif;font-style:italic;font-size:clamp(19px,2vw,24px);line-height:1.45;text-wrap:pretty">“I know who the expert is because I built my network over time, but I don't know what someone new would do.”</div>
+            <div style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.14em;color:#6E6558;margin-top:12px">INTERVIEWEE</div>
+          </div><h3 style="font-family: 'Instrument Serif',serif; font-weight: 400; font-size: clamp(24px,2.8vw,34px); line-height: 1.15; margin: 0; margin-top: 20px; margin-bottom: 10px">Old information is worse than no information</h3>
+<p style="margin: 16px 0 0; font-size: 16.5px; line-height: 1.7; color: #4A423A; max-width: 58ch; text-wrap: pretty; margin-top: 0px"><b>Interviews </b>showed that people didn't use existing resource sites because content was viewed as historical rather than maintained. Maintenance was typically done by non-technical staff, so custom coding was a blocker.<br></p>
+        </div>
+      </div>
+
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:clamp(20px,4vw,56px);padding-top:26px;margin-top:clamp(40px,5vw,64px);border-top:1px solid #E3DCD1">
+        <div><div style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.16em;color:{{ accent }};position:sticky;top:90px">03 &nbsp;DESIGN</div></div>
+        <div style="grid-column:span 2;min-width:0">
+          <h3 style="font-family: 'Instrument Serif',serif; font-weight: 400; font-size: clamp(24px,2.8vw,34px); line-height: 1.15; margin: 0">Four object types, one config platform</h3>
+          <p style="margin:16px 0 0;font-size:16.5px;line-height:1.7;color:#4A423A;max-width:58ch;text-wrap:pretty">I configured a Salesforce site that prioritized ease of maintenance for non-technical staff to ensure it stayed up-to-date.<br><br>The site serves as a single entry point for the top resources: ready-to-go solutions to share with clients, and associated assets such as whitepapers and code repositories, as well as articles from experts including contact information to learn more.<br></p>
+          <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:16px;margin-top:26px">
+            <div><div style="border:1px solid #E3DCD1;border-radius:3px;overflow:hidden;background:#fff;height:clamp(200px,24vw,290px)"><img src="./pasted-1790440261182-0-muilwje8-jsms.png" alt="pasted-1790440261182-0" width="1082" height="1706" style="max-width: 100%; height: auto; display: block; object-fit: cover; width: 1082px; aspect-ratio: 1082 / 1706"></div><div style="font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.1em;color:#6E6558;margin-top:8px">HOMEPAGE</div></div>
+            <div><div style="border:1px solid #E3DCD1;border-radius:3px;overflow:hidden;background:#fff;height:clamp(200px,24vw,290px)"><img src="assets/drp-solution.png" alt="Solution detail page" style="width:100%;display:block"></div><div style="font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.1em;color:#6E6558;margin-top:8px">SOLUTIONS</div></div>
+            <div><div style="border:1px solid #E3DCD1;border-radius:3px;overflow:hidden;background:#fff;height:clamp(200px,24vw,290px)"><img src="assets/drp-asset.png" alt="Asset detail page" style="width:100%;display:block"></div><div style="font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.1em;color:#6E6558;margin-top:8px">ASSETS</div></div>
+          </div><div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:16px;margin-top:26px">
+            <div><div style="border: 1px solid #E3DCD1; border-radius: 3px; overflow: hidden; background: #fff; height: 208px; width: 206px"><img src="assets/drp-article.png" alt="Article and story template" style="width:100%;display:block"></div><div style="font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.1em;color:#6E6558;margin-top:8px">ARTICLE TEMPLATE</div></div>
+            <div><div style="border: 1px solid #E3DCD1; border-radius: 3px; overflow: hidden; background: #fff; height: 210px; width: 205px"><img src="./pasted-1790440285474-0-muilx2c1-y4ay.png" alt="pasted-1790440285474-0" width="1082" height="658" style="max-width: 100%; height: auto; display: block; object-fit: cover; width: 1082px; aspect-ratio: 1082 / 658"></div><div style="font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.1em;color:#6E6558;margin-top:8px">ERROR PAGE</div></div>
+            <div><div style="border: 1px solid #E3DCD1; border-radius: 3px; overflow: hidden; background: #fff; height: 209px; width: 206px"><img src="./pasted-1790440562742-0-muim2zzg-0k3p.png" alt="pasted-1790440562742-0" width="710" height="684" style="max-width: 100%; height: auto; display: block; object-fit: cover; width: 710px; aspect-ratio: 710 / 684"></div><div style="font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.1em;color:#6E6558;margin-top:8px">DETAIL: ADVISORS &amp; PARTNERS</div></div>
+          </div>
+        </div>
+      </div>
+
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:clamp(20px,4vw,56px);padding-top:26px;margin-top:clamp(40px,5vw,64px);border-top:1px solid #E3DCD1">
+        <div><div style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.16em;color:{{ accent }};position:sticky;top:90px">04 &nbsp;TESTING</div></div>
+        <div style="grid-column:span 2;min-width:0">
+          <h3 style="font-family: 'Instrument Serif',serif; font-weight: 400; font-size: clamp(24px,2.8vw,34px); line-height: 1.15; margin: 0">The search that usability testing said to build</h3>
+          <p style="margin:16px 0 0;font-size:16.5px;line-height:1.7;color:#4A423A;max-width:58ch;text-wrap:pretty">Testers could complete tasks but lost time hunting. Filtering by object type and topic went to the top of the next release. This is that interaction — try it.</p><div style="margin-top:30px;border:1px solid #E3DCD1;border-radius:4px;padding:22px;background:#fff">
+            <div style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.16em;color:#6E6558">USABILITY TEST — MEAN CONFIDENCE, 1–10</div>
+            <div style="display:flex;flex-direction:column;gap:18px;margin-top:20px">
+              <div>
+                <div style="display:flex;justify-content:space-between;font-size:14.5px;margin-bottom:7px"><span>Understanding the system</span><span style="font-family:'IBM Plex Mono',monospace">8.2</span></div>
+                <div style="height:8px;background:#F1EBE2;border-radius:100px;overflow:hidden"><div style="width:82%;height:100%;background:{{ accent }}"></div></div>
+              </div>
+              <div>
+                <div style="display:flex;justify-content:space-between;font-size:14.5px;margin-bottom:7px"><span>Completing specific tasks</span><span style="font-family:'IBM Plex Mono',monospace">7.5</span></div>
+                <div style="height:8px;background:#F1EBE2;border-radius:100px;overflow:hidden"><div style="width:75%;height:100%;background:{{ accent }}"></div></div>
+              </div>
+            </div>
+            <p style="margin:20px 0 0;font-size:14.5px;line-height:1.6;color:#4A423A;text-wrap:pretty">The 0.7 gap between the two is the whole story: people understood what the platform was for faster than they could act in it. That gap set the next release — advanced search, filtering, and customization — rather than any new content.</p>
+          </div><p style="margin:16px 0 0;font-size:16.5px;line-height:1.7;color:#4A423A;max-width:58ch;text-wrap:pretty">See how usability testing and prioritization was done:</p><img src="./pasted-1790439823730-0-muiln5tz-srna.png" alt="pasted-1790439823730-0" width="1874" height="1004" style="max-width: 100%; height: auto; display: block; object-fit: cover; width: 1874px; aspect-ratio: 1874 / 1004; margin-top: 20px; margin-bottom: 0px"><div style="font-family: 'IBM Plex Mono',monospace; font-size: 10.5px; letter-spacing: .1em; color: #6E6558; margin-top: 8px; margin-bottom: 8px">USABILITY TEST RESULTS</div><img src="./pasted-1790439886414-0-muiloi2y-gabt.png" alt="pasted-1790439886414-0" width="1874" height="922" style="max-width: 100%; height: auto; display: block; object-fit: cover; width: 1874px; aspect-ratio: 1874 / 922; margin-top: 20px"><div style="font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.1em;color:#6E6558;margin-top:8px">USABILITY RECOMMENDATIONS AND RANKINGS</div>
+          
+        </div>
+      </div><div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:clamp(20px,4vw,56px);padding-top:26px;margin-top:clamp(40px,5vw,64px);border-top:1px solid #E3DCD1">
+        <div><div style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.16em;color:{{ accent }};position:sticky;top:90px">05&nbsp; TRY IT</div></div>
+        <div style="grid-column:span 2;min-width:0">
+          
+          
+          <h3 style="font-family: 'Instrument Serif',serif; font-weight: 400; font-size: clamp(24px,2.8vw,34px); line-height: 1.15; margin: 0">See for yourself</h3><div style="margin-top:24px;border:1px solid #E3DCD1;border-radius:4px;background:#fff;overflow:hidden">
+            <div style="padding:16px 18px;border-bottom:1px solid #EFE9E0;display:flex;flex-wrap:wrap;gap:10px;align-items:center">
+              <input value="{{ drpQuery }}" onChange="{{ setQuery }}" placeholder="Search assets, experts, stories…" style="flex:1 1 200px;min-width:0;border:1px solid #E3DCD1;border-radius:3px;padding:9px 12px;font-family:'IBM Plex Sans',sans-serif;font-size:14.5px;font-weight:300;color:#1A1714;background:#FCFAF7;outline:none">
+              <span style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.1em;color:#6E6558;white-space:nowrap">{{ drpCount }} RESULTS</span>
+            </div>
+            <div style="padding:14px 18px;display:flex;flex-wrap:wrap;gap:8px;border-bottom:1px solid #EFE9E0">
+              <sc-for list="{{ drpChips }}" as="chip" hint-placeholder-count="5">
+                <span onClick="{{ chip.pick }}" style="border:1px solid {{ chip.border }};background:{{ chip.bg }};color:{{ chip.fg }};border-radius:100px;padding:5px 14px;font-size:13px;cursor:pointer;white-space:nowrap">{{ chip.label }}</span>
+              </sc-for>
+            </div>
+            <div style="max-height:330px;overflow:auto">
+              <sc-for list="{{ drpResults }}" as="r" hint-placeholder-count="4">
+                <div style="padding:15px 18px;border-bottom:1px solid #F4EFE7;display:flex;gap:14px;align-items:flex-start">
+                  <span style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.1em;color:#6E6558;border:1px solid #E3DCD1;border-radius:2px;padding:3px 7px;white-space:nowrap;flex:none;margin-top:2px">{{ r.kind }}</span>
+                  <span style="min-width:0"><span style="display:block;font-size:15.5px;color:#1A1714">{{ r.title }}</span><span style="display:block;font-size:13.5px;color:#6E6558;margin-top:3px">{{ r.meta }}</span></span>
+                </div>
+              </sc-for>
+              <sc-if value="{{ drpEmpty }}" hint-placeholder-val="{{ false }}">
+                <div style="padding:34px 18px;text-align:center"><div style="font-size:15.5px">No matches for that search.</div><div style="font-size:13.5px;color:#6E6558;margin-top:6px">Designed empty state: suggests the nearest topic and offers to notify an expert.</div></div>
+              </sc-if>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:clamp(20px,4vw,56px);padding-top:26px;margin-top:clamp(40px,5vw,64px);border-top:1px solid #E3DCD1">
+        <div><div style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.16em;color:{{ accent }};position:sticky;top:90px">05 &nbsp;RESULTS</div></div>
+        <div style="grid-column:span 2;min-width:0">
+          <h3 style="font-family:'Instrument Serif',serif;font-weight:400;font-size:clamp(24px,2.8vw,34px);line-height:1.15;margin:0;max-width:24ch">Adoption exceeded expectations</h3>
+          <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:20px;margin-top:24px">
+            <div style="border-top:2px solid #1A1714;padding-top:14px"><div style="font-family:'Instrument Serif',serif;font-size:clamp(32px,4vw,46px);line-height:1">Top 10</div><div style="font-size:14px;color:#4A423A;margin-top:6px">most-visited links company-wide, year one</div></div>
+            <div style="border-top:2px solid #1A1714;padding-top:14px"><div style="font-family:'Instrument Serif',serif;font-size:clamp(32px,4vw,46px);line-height:1">4×+</div><div style="font-size:14px;color:#4A423A;margin-top:6px">growth in contributed content, year one</div></div>
+            
+          </div>
+          
+        </div>
+      </div>
+    </div>
+  </div>
+  </sc-if>
+
+  <div style="display:flex;flex-wrap:wrap;gap:14px;margin-top:clamp(48px,7vw,90px);padding-top:26px;border-top:1px solid #1A1714">
+    <div onClick="{{ goP2 }}" style="border:1px solid #1A1714;border-radius:100px;padding:11px 24px;font-size:14.5px;cursor:pointer">Next project: Demystifying Billing →</div>
+    
+  </div>
+</div>
+</sc-if>
+
+<sc-if value="{{ onP2 }}">
+<div style="max-width:1180px;margin:0 auto;padding:clamp(30px,5vw,56px) clamp(20px,4vw,56px) clamp(60px,8vw,100px)">
+  <div onClick="{{ goHome }}" style="font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:.14em;color:#6E6558;cursor:pointer">← ALL WORK</div>
+
+  <div style="display:flex;flex-wrap:wrap;gap:24px;align-items:flex-end;justify-content:space-between;margin-top:26px">
+    <div style="min-width:0">
+      <div style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.18em;color:{{ accent }}">02 &nbsp;/&nbsp; FEDERAL / FINANCE</div>
+      <h1 style="font-family:'Instrument Serif',serif;font-weight:400;font-size:clamp(36px,5.6vw,68px);line-height:1.04;margin:14px 0 0;letter-spacing:-.01em">Demystifying Billing</h1>
+      <p style="margin:14px 0 0;font-size:clamp(16px,1.5vw,19px);line-height:1.55;color:#4A423A;max-width:52ch;text-wrap:pretty">Redesigning a complex system so people understand their charges instead of staring at cryptic terms.</p>
+    </div>
+    <div onClick="{{ toggleSkim }}" style="display:flex;align-items:center;gap:10px;border:1px solid #1A1714;border-radius:100px;padding:8px 16px;cursor:pointer;white-space:nowrap;background:{{ skimBg }};color:{{ skimFg }}">
+      <span style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.14em">60-SECOND SKIM</span>
+      <span style="width:26px;height:15px;border-radius:100px;border:1px solid currentColor;position:relative;display:inline-block"><span style="position:absolute;top:2px;left:{{ skimKnob }};width:9px;height:9px;border-radius:50%;background:currentColor;transition:left .18s ease"></span></span>
+    </div>
+  </div>
+
+  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:20px;margin-top:34px;padding:18px 0;border-top:1px solid #1A1714;border-bottom:1px solid #E3DCD1">
+    <div><div style="font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.16em;color:#6E6558">ROLE</div><div style="font-size:15px;margin-top:6px">Strategy &amp; Design Manager — solo</div></div>
+    <div><div style="font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.16em;color:#6E6558">WHEN</div><div style="font-size:15px;margin-top:6px">2024</div></div>
+    <div><div style="font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.16em;color:#6E6558">TOOLS</div><div style="font-size:15px;margin-top:6px">Axure, Illustrator</div></div>
+    <div><div style="font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.16em;color:#6E6558">OUTCOME</div><div style="font-size:15px;margin-top:6px;color:{{ accent }}">Backed by client executives</div></div>
+  </div>
+
+  <sc-if value="{{ skim }}" hint-placeholder-val="{{ false }}">
+    <div style="margin-top:38px">
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:clamp(14px,3vw,40px);padding:22px 0;border-bottom:1px solid #E3DCD1">
+        <div style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.16em;color:#6E6558">SITUATION</div>
+        <div style="grid-column: span 2; font-size: 16px; line-height: 1.5; text-wrap: pretty">Nobody understood internal billing — especially why costs moved month to month — and they didn't want to keep paying blindly.</div>
+      </div>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:clamp(14px,3vw,40px);padding:22px 0;border-bottom:1px solid #E3DCD1">
+        <div style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.16em;color:#6E6558">WHAT I DID</div>
+        <div style="grid-column: span 2; font-size: 16px; line-height: 1.5; text-wrap: pretty">Competitive analysis, card sorting against TBM taxonomy, a design system, site map, and page-level action review. Then, low-fi wireframes validated into a high-fidelity prototype.</div>
+      </div>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:clamp(14px,3vw,40px);padding:22px 0;border-bottom:1px solid #E3DCD1">
+        <div style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.16em;color:#6E6558">RESULT</div>
+        <div style="grid-column: span 2; font-size: 16px; line-height: 1.5; text-wrap: pretty">A readable bill with a real hierarchy, comparison tooling, FAQ, and notifications. Presented to client executive leadership, who backed it and stated that they hadn't been able to picture what they needed until they saw the possibilities of this design.</div>
+      </div>
+      <div onClick="{{ toggleSkim }}" style="margin-top:24px;font-size:15px;border-bottom:1px solid #1A1714;display:inline-block;padding-bottom:3px;cursor:pointer">Read the full case study →</div>
+    </div>
+  </sc-if>
+
+  <sc-if value="{{ full }}" hint-placeholder-val="{{ true }}">
+  <div>
+    <div style="margin-top:36px;border:1px solid #E3DCD1;border-radius:4px;overflow:hidden;background:#fff">
+      <div style="height:30px;background:#F1EBE2;border-bottom:1px solid #E7E0D5;display:flex;align-items:center;gap:6px;padding:0 12px"><div style="width:8px;height:8px;border-radius:50%;background:#D6CCBE"></div><div style="width:8px;height:8px;border-radius:50%;background:#D6CCBE"></div><div style="width:8px;height:8px;border-radius:50%;background:#D6CCBE"></div></div>
+      <div style="max-height:clamp(320px,44vw,560px);overflow:hidden"><img src="assets/bill-mybill.png" alt="My Bill dashboard with invoice summary and bill comparison" style="width:100%;display:block"></div>
+    </div>
+    <div style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.12em;color:#6E6558;margin-top:10px">MY BILL — AMOUNT DUE, MONTH-OVER-MONTH COMPARISON, AND LINE DETAIL ON ONE SCREEN</div>
+
+    <div style="margin-top:clamp(44px,6vw,80px)">
+
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:clamp(20px,4vw,56px);padding-top:26px;border-top:1px solid #1A1714">
+        <div><div style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.16em;color:{{ accent }};position:sticky;top:90px">01 &nbsp;SITUATION</div></div>
+        <div style="grid-column:span 2;min-width:0">
+          <h3 style="font-family: 'Instrument Serif',serif; font-weight: 400; font-size: clamp(24px,2.8vw,34px); line-height: 1.15; margin: 0">Nobody understood the bill. They didn't want to keep paying blindly.</h3>
+          <p style="margin:16px 0 0;font-size:16.5px;line-height:1.7;color:#4A423A;max-width:58ch;text-wrap:pretty">Terms and charges were hard to parse. Two questions came up in every conversation and neither had an answer on the page: why did this change since last month, and is what I'm paying reasonable compared to teams like mine?</p>
+          <div style="margin-top:24px;padding:20px 22px;background:#F1EBE2;border-radius:4px">
+            <div style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.16em;color:#6E6558">THE TASK</div>
+            <p style="margin:8px 0 0;font-size:16.5px;line-height:1.6;text-wrap:pretty">Simplify bills for all points of contact, make charges clear, and align everything to TBM taxonomy.</p>
+          </div>
+        </div>
+      </div>
+
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:clamp(20px,4vw,56px);padding-top:26px;margin-top:clamp(40px,5vw,64px);border-top:1px solid #E3DCD1">
+        <div><div style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.16em;color:{{ accent }};position:sticky;top:90px">02 &nbsp;RESEARCH</div></div>
+        <div style="grid-column:span 2;min-width:0">
+          <h3 style="font-family:'Instrument Serif',serif;font-weight:400;font-size:clamp(24px,2.8vw,34px);line-height:1.15;margin:0;max-width:24ch">Utility bills already solved this</h3>
+          <p style="margin:16px 0 0;font-size:16.5px;line-height:1.7;color:#4A423A;max-width:58ch;text-wrap:pretty">Competitive analysis of consumer billing, such as Pepco, pointed to three things this system had none of: bill-to-bill comparison, help text at the point of confusion, and interactive dashboards to break down the data. I turned competitor bills and TBM taxonomy into a requirements list, then ran card sorting to find groupings that matched how people actually think about their costs.</p>
+          <div style="margin-top:26px;border:1px solid #E3DCD1;border-radius:4px;background:#fff;padding:22px">
+            <div style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.16em;color:#6E6558">CARD SORT → TBM-ALIGNED GROUPINGS</div>
+            <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(165px,1fr));gap:14px;margin-top:18px">
+              <div style="border-top:2px solid {{ accent }};padding-top:12px"><div style="font-size:15px;font-weight:500">Towers</div><div style="font-size:13.5px;color:#6E6558;line-height:1.5;margin-top:6px">Compute · End User · Platform · Security &amp; Compliance · IT Management</div></div>
+              <div style="border-top:2px solid #DCD4C8;padding-top:12px"><div style="font-size:15px;font-weight:500">Cost pools</div><div style="font-size:13.5px;color:#6E6558;line-height:1.5;margin-top:6px">Internal &amp; external labor · Outside services · Hardware · Software · Facilities</div></div>
+              <div style="border-top:2px solid #DCD4C8;padding-top:12px"><div style="font-size:15px;font-weight:500">Frequency</div><div style="font-size:13.5px;color:#6E6558;line-height:1.5;margin-top:6px">One-time · Monthly · Usage · Adjustment</div></div>
+            </div>
+            
+          </div><div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:16px;margin-top:26px">
+            <div><div style="border:1px solid #E3DCD1;border-radius:3px;overflow:hidden;background:#fff;height:clamp(200px,24vw,280px)"><img src="./pasted-1790441074689-0-muimdz0l-c3eu.png" alt="pasted-1790441074689-0" width="902" height="719" style="max-width: 100%; height: auto; display: block; object-fit: cover; width: 902px; aspect-ratio: 902 / 719"></div><div style="font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.1em;color:#6E6558;margin-top:8px">REQUIREMENTS LIST</div></div>
+            <div><div style="border:1px solid #E3DCD1;border-radius:3px;overflow:hidden;background:#fff;height:clamp(200px,24vw,280px)"><img src="./pasted-1790441023788-0-muimcvsa-1bvc.png" alt="pasted-1790441023788-0" width="890" height="1192" style="max-width: 100%; height: auto; display: block; object-fit: cover; width: 890px; aspect-ratio: 890 / 1192"></div><div style="font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.1em;color:#6E6558;margin-top:8px">ACTION MAP</div></div>
+            <div><div style="border:1px solid #E3DCD1;border-radius:3px;overflow:hidden;background:#fff;height:clamp(200px,24vw,280px)"><img src="./pasted-1790441049251-0-muimdfeq-2u7w.png" alt="pasted-1790441049251-0" width="976" height="812" style="max-width: 100%; height: auto; display: block; object-fit: cover; width: 976px; aspect-ratio: 976 / 812"></div><div style="font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.1em;color:#6E6558;margin-top:8px">CARD SORTING RESULTS</div></div>
+          </div>
+        </div>
+      </div>
+
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:clamp(20px,4vw,56px);padding-top:26px;margin-top:clamp(40px,5vw,64px);border-top:1px solid #E3DCD1">
+        <div><div style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.16em;color:{{ accent }};position:sticky;top:90px">03 &nbsp;DESIGN</div></div>
+        <div style="grid-column:span 2;min-width:0">
+          <h3 style="font-family: 'Instrument Serif',serif; font-weight: 400; font-size: clamp(24px,2.8vw,34px); line-height: 1.15; margin: 0">Create intuitive views and logical navigation</h3>
+          <p style="margin:16px 0 0;font-size:16.5px;line-height:1.7;color:#4A423A;max-width:58ch;text-wrap:pretty">Prioritized actions drove low-fidelity wireframes. Once validated, I built them out in high fidelity against a design system I wrote for the program.</p><div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:16px;margin-top:26px">
+            <div><div style="border:1px solid #E3DCD1;border-radius:3px;overflow:hidden;background:#fff;height:clamp(200px,24vw,280px)"><img src="./pasted-1790441010762-0-muimclp1-wa13.png" alt="pasted-1790441010762-0" width="890" height="474" style="max-width: 100%; height: auto; display: block; object-fit: cover; width: 890px; aspect-ratio: 890 / 474; margin-top: 20px"></div><div style="font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.1em;color:#6E6558;margin-top:8px">SITE MAP</div></div>
+            <div><div style="border:1px solid #E3DCD1;border-radius:3px;overflow:hidden;background:#fff;height:clamp(200px,24vw,280px)"><img src="./pasted-1790441644268-0-muimq6hz-og2r.png" alt="pasted-1790441644268-0" width="720" height="852" style="max-width: 100%; height: auto; display: block; object-fit: cover; width: 720px; aspect-ratio: 720 / 852"></div><div style="font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.1em;color:#6E6558;margin-top:8px">STYLE GUIDE</div></div>
+            
+          </div><div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:16px;margin-top:26px">
+            <div><div style="border:1px solid #E3DCD1;border-radius:3px;overflow:hidden;background:#fff;height:clamp(200px,24vw,280px)"><img src="./pasted-1790441336496-0-muimjl32-bmmn.png" alt="pasted-1790441336496-0" width="938" height="818" style="max-width: 100%; height: auto; display: block; object-fit: cover; width: 938px; aspect-ratio: 938 / 818"></div><div style="font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.1em;color:#6E6558;margin-top:8px">HOMEPAGE (MY BILL)</div></div>
+            <div><div style="border:1px solid #E3DCD1;border-radius:3px;overflow:hidden;background:#fff;height:clamp(200px,24vw,280px)"><img src="./pasted-1790441427946-0-muimljjh-u4lg.png" alt="pasted-1790441427946-0" width="938" height="410" style="max-width: 100%; height: auto; display: block; object-fit: cover; width: 938px; aspect-ratio: 938 / 410"></div><div style="font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.1em;color:#6E6558;margin-top:8px">REPORTS</div></div>
+            <div><div style="border:1px solid #E3DCD1;border-radius:3px;overflow:hidden;background:#fff;height:clamp(200px,24vw,280px)"><img src="assets/bill-reports2.png" alt="Interactive reports dashboard" style="width:100%;display:block"></div><div style="font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.1em;color:#6E6558;margin-top:8px">REPORTS DETAIL</div></div>
+          </div>
+          <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:16px;margin-top:26px">
+            <div><div style="border:1px solid #E3DCD1;border-radius:3px;overflow:hidden;background:#fff;height:clamp(200px,24vw,280px)"><img src="assets/bill-understanding.png" alt="Understanding My Bill glossary page" style="width:100%;display:block"></div><div style="font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.1em;color:#6E6558;margin-top:8px">GLOSSARY &amp; HELP</div></div>
+            <div><div style="border:1px solid #E3DCD1;border-radius:3px;overflow:hidden;background:#fff;height:clamp(200px,24vw,280px)"><img src="./pasted-1790441466473-0-muimmdc3-cl2n.png" alt="pasted-1790441466473-0" width="758" height="812" style="max-width: 100%; height: auto; display: block; object-fit: cover; width: 758px; aspect-ratio: 758 / 812"></div><div style="font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.1em;color:#6E6558;margin-top:8px">FAQ</div></div>
+            <div><div style="border:1px solid #E3DCD1;border-radius:3px;overflow:hidden;background:#fff;height:clamp(200px,24vw,280px)"><img src="assets/bill-profile.png" alt="Profile and notification settings" style="width:100%;display:block"></div><div style="font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.1em;color:#6E6558;margin-top:8px">PROFILE &amp; ALERTS</div></div>
+          </div>
+        </div>
+      </div>
+
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:clamp(20px,4vw,56px);padding-top:26px;margin-top:clamp(40px,5vw,64px);border-top:1px solid #E3DCD1">
+        <div><div style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.16em;color:{{ accent }};position:sticky;top:90px">04 &nbsp;TRY IT</div></div>
+        <div style="grid-column:span 2;min-width:0">
+          <h3 style="font-family:'Instrument Serif',serif;font-weight:400;font-size:clamp(24px,2.8vw,34px);line-height:1.15;margin:0;max-width:26ch">See for yourself</h3>
+          <p style="margin:16px 0 0;font-size:16.5px;line-height:1.7;color:#4A423A;max-width:58ch;text-wrap:pretty">With a little Claude magic, you can test out some of the key reporting features.</p>
+          <div style="margin-top:20px;border:1px solid #E3DCD1;border-radius:4px;background:#EFF0F2;overflow-x:auto">
+            <div style="min-width:620px;font-family:'Helvetica Neue',Helvetica,Arial,sans-serif;color:#1A1A1A;font-size:12px">
+              <div style="background:#fff;border-top:3px solid #1C2B4F;border-bottom:1px solid #D9DCE1;display:flex;align-items:stretch;justify-content:space-between;padding:0 0 0 22px">
+                <div style="display:flex;align-items:center;gap:8px;padding:12px 0"><span style="width:30px;height:28px;background:#2B5BB5;border:1px solid #1C2B4F"></span><span style="width:70px;height:9px;background:#111"></span></div>
+                <div style="display:flex;align-items:stretch;font-size:11.5px">
+                  <div onClick="{{ billGoBill }}" style="padding:0 22px;display:flex;align-items:center;cursor:pointer;border-bottom:3px solid {{ navBillLine }}" style-hover="color:#1480A0">My Bill</div>
+                  <div onClick="{{ billGoTotal }}" style="padding:0 22px;display:flex;align-items:center;cursor:pointer;border-left:1px solid #D9DCE1;border-bottom:3px solid {{ navRepLine }}" style-hover="color:#1480A0">REPORTS</div>
+                  <div style="padding:0 18px;display:flex;align-items:center">HELP</div>
+                  <div style="padding:0 22px 0 18px;display:flex;align-items:center">PROFILE</div>
+                </div>
+              </div>
+              <div style="padding:16px 22px 22px">
+                <div style="display:flex;justify-content:space-between;align-items:flex-end;gap:12px">
+                  <div style="font-size:24px;letter-spacing:.01em">{{ billTitle }}</div>
+                  <div style="color:#1E9AD6;font-size:11.5px;font-weight:600;text-decoration:underline;display:flex;align-items:center;gap:8px">Statement Period - 2/1/2024-2/29/2024 <span style="text-decoration:none;font-size:10px">▼</span></div>
+                </div>
+
+                <sc-if value="{{ billIsBill }}" hint-placeholder-val="{{ true }}">
+                  <div style="display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:10px;margin-top:12px">
+                    <div style="background:#fff;padding:16px 18px">
+                      <div style="display:flex;justify-content:space-between;align-items:center"><div style="font-weight:700;font-size:13px">INVOICE #123456789A</div><div style="background:#1480A0;color:#fff;border-radius:8px;padding:7px 12px;font-size:11px;font-weight:600">Pay Bill</div></div>
+                      <div style="margin-top:8px">
+                        <div style="display:grid;grid-template-columns:1.3fr 1fr;padding:5px 8px;border-bottom:1px solid #D9DCE1"><span>Balance Forward</span><span style="color:#777">$15,000</span></div>
+                        <div style="display:grid;grid-template-columns:1.3fr 1fr;padding:5px 8px;border-bottom:1px solid #D9DCE1"><span>Other On-Top Adjustments</span><span style="color:#2B5BB5">(-$400)</span></div>
+                        <div style="display:grid;grid-template-columns:1.3fr 1fr;padding:5px 8px;border-bottom:1px solid #D9DCE1"><span>New Charges (2/1-2/29)</span><span style="color:#777">$10,400</span></div>
+                        <div style="display:grid;grid-template-columns:1.3fr 1fr;padding:6px 8px;background:#2B5BB5;color:#fff;font-weight:700;font-size:13px;margin-top:1px"><span>Amount Due</span><span>$25,000</span></div>
+                        <div style="display:grid;grid-template-columns:1.3fr 1fr;padding:6px 8px;background:#2B5BB5;color:#fff;font-weight:700;font-size:13px;margin-top:2px"><span>Due Date</span><span>3/31/2024</span></div>
+                        <div style="display:grid;grid-template-columns:1.3fr 1fr;padding:5px 8px;border-bottom:1px solid #D9DCE1"><span>Invoice Issue Date</span><span style="color:#777">3/2/2024</span></div>
+                      </div>
+                    </div>
+                    <div style="background:#fff;padding:16px 18px">
+                      <div style="font-weight:700;font-size:13px">BILL COMPARISON</div>
+                      <div style="display:flex;gap:14px;align-items:center;margin-top:12px">
+                        <div style="width:104px;height:104px;flex:none;border-radius:50%;background:conic-gradient(#1480A0 0 25%,#2B5BB5 25% 50%,#29A8E0 50% 100%);display:flex;align-items:center;justify-content:center"><div style="width:74px;height:74px;border-radius:50%;background:#fff;display:flex;flex-direction:column;align-items:center;justify-content:center;font-size:10px">New Charges<span style="font-size:13px;font-weight:600;margin-top:2px">$10,400</span></div></div>
+                        <div style="min-width:0;font-size:11.5px;line-height:1.4">
+                          <div><b style="color:#E8961E">1.96% Higher</b> than last month.</div>
+                          <div><b style="color:#6DAA2C">0.95% Lower</b> than your 6 month average.</div>
+                          <div><b style="color:#2B5BB5">AVERAGE</b> compared to estimated bills for your and/or similar departments.</div>
+                          <div onClick="{{ billGoTotal }}" style="margin-top:10px;display:inline-flex;border:1.5px solid #1480A0;color:#1480A0;border-radius:10px;padding:7px 14px;font-size:11px;cursor:pointer;background:#fff;transition:background .15s" style-hover="background:#E6F4FA">See Report</div>
+                        </div>
+                      </div>
+                      <div style="margin-top:12px;font-size:9px;color:#999;line-height:1.4">Data for Feb 1 - Feb 29. Last Updated March 2 at 12:00am.</div>
+                    </div>
+                  </div>
+                </sc-if>
+
+                <sc-if value="{{ billIsReport }}" hint-placeholder-val="{{ false }}">
+                  <div style="background:#fff;padding:16px 18px;margin-top:12px">
+                    <div style="display:flex;justify-content:space-between;align-items:center;gap:12px">
+                      <div style="font-weight:700;font-size:13px">{{ reportTitle }}</div>
+                      <div style="display:flex;align-items:center;gap:8px">
+                        <div style="display:flex;border:1px solid #C9CDD3;border-radius:10px;overflow:hidden;font-size:11px">
+                          <div onClick="{{ billGoTotal }}" style="padding:6px 14px;cursor:pointer;background:{{ totBg }};color:{{ totColor }};border-right:1px solid #C9CDD3">Show Total</div>
+                          <div onClick="{{ billGoBd }}" style="padding:6px 14px;cursor:pointer;background:{{ bdBg }};color:{{ bdColor }}">Show Breakdown</div>
+                        </div>
+                        <span style="width:28px;height:26px;border-radius:6px;background:#F1F3F5;color:#1E9AD6;display:flex;align-items:center;justify-content:center;font-size:13px">⟋</span>
+                        <span style="width:28px;height:26px;border-radius:6px;background:#F1F3F5;display:flex;align-items:flex-end;justify-content:center;gap:2px;padding-bottom:6px"><i style="width:3px;height:6px;background:#1E9AD6"></i><i style="width:3px;height:9px;background:#1E9AD6"></i><i style="width:3px;height:12px;background:#1E9AD6"></i></span>
+                        <span style="background:#1480A0;color:#fff;border-radius:8px;padding:6px 10px;font-size:11px">Export</span>
+                      </div>
+                    </div>
+                    <div style="position:relative;height:170px;margin:18px 0 0 34px;border-left:1px solid #999;border-bottom:1px solid #999">
+                      <div style="position:absolute;left:0;right:0;top:0;border-top:1px solid #E1E3E6"></div>
+                      <div style="position:absolute;left:0;right:0;top:33%;border-top:1px solid #E1E3E6"></div>
+                      <div style="position:absolute;left:0;right:0;top:66%;border-top:1px solid #E1E3E6"></div>
+                      <div style="position:absolute;left:-30px;top:0;bottom:0;display:flex;flex-direction:column;justify-content:space-between;color:#888;font-size:10px;transform:translateY(-6px)"><span>$0</span><span>$0</span><span>$0</span><span>$0</span></div>
+                      <div style="position:absolute;inset:0;display:flex;justify-content:space-around;align-items:flex-end">
+                        <sc-for list="{{ chartBars }}" as="bar" hint-placeholder-count="4">
+                          <div style="width:{{ bar.w }};height:{{ bar.h }};display:flex;flex-direction:column-reverse;background:{{ bar.bg }};border:{{ bar.border }};border-bottom:none">
+                            <sc-for list="{{ bar.segs }}" as="seg" hint-placeholder-count="0"><div style="height:{{ seg.h }};background:{{ seg.c }};flex:none"></div></sc-for>
+                          </div>
+                        </sc-for>
+                      </div>
+                    </div>
+                    <div style="display:flex;justify-content:space-around;margin-left:34px;color:#777;font-size:10.5px;padding-top:5px">
+                      <sc-for list="{{ chartBars }}" as="bar" hint-placeholder-count="4"><span style="width:0;display:flex;justify-content:center;white-space:nowrap">{{ bar.label }}</span></sc-for>
+                    </div>
+
+                    <sc-if value="{{ billIsTotal }}" hint-placeholder-val="{{ false }}">
+                      <div style="font-weight:700;font-size:12.5px;margin-top:16px">ACTUAL BILLED-TO-DATE</div>
+                      <div style="display:grid;grid-template-columns:60px repeat(4,minmax(0,1fr)) minmax(0,1.5fr);padding:4px 0;border-bottom:1px solid #999;font-size:10.5px;margin-top:4px"><span></span><span>1st Quarter</span><span>2nd Quarter</span><span>3rd Quarter</span><span>4th Quarter</span><span>Yearly Total Billed-To Date</span></div>
+                      <div style="display:grid;grid-template-columns:60px repeat(4,minmax(0,1fr)) minmax(0,1.5fr);padding:5px 0;border-bottom:1px solid #D9DCE1;font-size:10.5px"><b>Total</b><span>$10,000</span><span>$10,000</span><span>$10,000</span><span>$10,000</span><span>$10,000</span></div>
+                      <div style="font-weight:700;font-size:12.5px;margin-top:16px">TOTAL ESTIMATED COST</div>
+                      <div style="display:grid;grid-template-columns:60px repeat(5,minmax(0,1fr));padding:4px 0;border-bottom:1px solid #999;font-size:10.5px;margin-top:4px"><span></span><span>Prior Year Balance</span><span>Est. Annual Cost</span><span>Funds Received</span><span>Other On-Top Adjustments</span><span>Estimated Due</span></div>
+                      <div style="display:grid;grid-template-columns:60px repeat(5,minmax(0,1fr));padding:5px 0;border-bottom:1px solid #D9DCE1;font-size:10.5px"><b>Total</b><span>$10,000</span><span>$10,000</span><span style="color:#1480A0">-($20.00)</span><span>$10,000</span><span>$10,000</span></div>
+                    </sc-if>
+
+                    <sc-if value="{{ billIsBd }}" hint-placeholder-val="{{ false }}">
+                      <div style="margin-top:14px">
+                        <div style="display:grid;grid-template-columns:minmax(0,1.3fr) repeat(4,minmax(0,1fr));padding:4px 0;border-bottom:1px solid #999;font-size:10.5px;font-weight:600"><span></span><span style="color:#1E9AD6;text-decoration:underline">This Month</span><span style="color:#1E9AD6;text-decoration:underline">Last Month</span><span>6 Month Avg</span><span>Estimated</span></div>
+                        <sc-for list="{{ bdRows }}" as="r" hint-placeholder-count="9">
+                          <div style="display:grid;grid-template-columns:minmax(0,1.3fr) repeat(4,minmax(0,1fr));padding:4px 0;border-bottom:1px solid #D9DCE1;font-size:10.5px;align-items:center"><span style="display:flex;align-items:center;gap:7px"><i style="width:9px;height:9px;border-radius:50%;background:{{ r.c }};flex:none"></i>{{ r.name }}</span><span>{{ r.a }}</span><span>{{ r.b }}</span><span>{{ r.b }}</span><span>{{ r.b }}</span></div>
+                        </sc-for>
+                        <div style="display:grid;grid-template-columns:minmax(0,1.3fr) repeat(4,minmax(0,1fr));padding:5px 0;border-bottom:1px solid #999;font-size:10.5px"><b style="padding-left:16px">Total</b><span>$10,000</span><span>$10,000</span><span>$10,000</span><span>$10,000</span></div>
+                      </div>
+                    </sc-if>
+                  </div>
+
+                  <sc-if value="{{ billIsBd }}" hint-placeholder-val="{{ false }}">
+                    <div style="display:grid;grid-template-columns:minmax(0,1.4fr) minmax(0,1fr);gap:10px;margin-top:10px;align-items:start">
+                      <div style="background:#fff;padding:16px 18px">
+                        <div style="display:flex;justify-content:space-between;align-items:center"><div style="font-weight:700;font-size:13px">MY BILL</div><div onClick="{{ billGoBill }}" style="background:#1480A0;color:#fff;border-radius:8px;padding:7px 12px;font-size:11px;font-weight:600;cursor:pointer;transition:background .15s" style-hover="background:#0F6A86">See Bill</div></div>
+                        <div style="display:flex;gap:14px;align-items:center;margin-top:10px">
+                          <div style="width:96px;height:96px;flex:none;border-radius:50%;background:conic-gradient(#1480A0 0 25%,#2B5BB5 25% 50%,#29A8E0 50% 100%);display:flex;align-items:center;justify-content:center"><div style="width:68px;height:68px;border-radius:50%;background:#fff;display:flex;flex-direction:column;align-items:center;justify-content:center;font-size:9.5px">New Charges<span style="font-size:12.5px;font-weight:600;margin-top:2px">$10,400</span></div></div>
+                          <div style="min-width:0;font-size:11px;line-height:1.4"><div><b style="color:#E8961E">1.96% Higher</b> than last month.</div><div><b style="color:#6DAA2C">0.95% Lower</b> than your 6 month average.</div><div><b style="color:#2B5BB5">AVERAGE</b> compared to estimated bills for your and/or similar departments.</div></div>
+                        </div>
+                      </div>
+                      <div style="background:#fff;padding:16px 18px">
+                        <div style="font-weight:700;font-size:13px">ALERTS</div>
+                        <div style="font-size:10.5px;margin-top:8px;padding-bottom:5px;border-bottom:1px solid #999">Compared to last statement period:</div>
+                        <div style="display:flex;gap:6px;align-items:center;font-size:10.5px;padding:5px 0;border-bottom:1px solid #D9DCE1"><i style="width:11px;height:11px;border-radius:50%;background:#E8961E;flex:none"></i>&gt;10% charge difference for IT Management</div>
+                        <div style="display:flex;gap:6px;align-items:center;font-size:10.5px;padding:5px 0;border-bottom:1px solid #999"><i style="width:11px;height:11px;border-radius:50%;background:#E8961E;flex:none"></i>&gt;10% charge difference for Security &amp; Compliance</div>
+                        <div style="margin-top:10px;display:inline-flex;border:1.5px solid #1480A0;color:#1480A0;border-radius:10px;padding:6px 12px;font-size:11px">Edit Settings</div>
+                      </div>
+                    </div>
+                  </sc-if>
+                </sc-if>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:clamp(20px,4vw,56px);padding-top:26px;margin-top:clamp(40px,5vw,64px);border-top:1px solid #E3DCD1">
+        <div><div style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.16em;color:{{ accent }};position:sticky;top:90px">05 &nbsp;RESULTS</div></div>
+        <div style="grid-column:span 2;min-width:0">
+          <h3 style="font-family: 'Instrument Serif',serif; font-weight: 400; font-size: clamp(24px,2.8vw,34px); line-height: 1.15; margin: 0">A bill you can read and a happy client</h3><p style="margin:16px 0 0;font-size:16.5px;line-height:1.7;color:#4A423A;max-width:58ch;text-wrap:pretty">Charges now sit in an established hierarchy and are aligned to TBM taxonomy.<br><br>This was a business development proposal presented to executive client leadership, who backed it and stated that they hadn't been able to picture what they needed until they saw the possibilities of this design.</p>
+          
+          
+        </div>
+      </div>
+    </div>
+  </div>
+  </sc-if>
+
+  <div style="display:flex;flex-wrap:wrap;gap:14px;margin-top:clamp(48px,7vw,90px);padding-top:26px;border-top:1px solid #1A1714">
+    <div onClick="{{ goP1 }}" style="border:1px solid #1A1714;border-radius:100px;padding:11px 24px;font-size:14.5px;cursor:pointer">← Previous project: Delivery Resource Platform</div>
+    <div onClick="{{ goP3 }}" style="border:1px solid #1A1714;border-radius:100px;padding:11px 24px;font-size:14.5px;cursor:pointer">Next project: Rebuilding My Portfolio →</div>
+    
+  </div>
+</div>
+</sc-if>
+
+<sc-if value="{{ onP3 }}">
+<div style="max-width:1180px;margin:0 auto;padding:clamp(30px,5vw,56px) clamp(20px,4vw,56px) clamp(60px,8vw,100px)">
+  <div onClick="{{ goHome }}" style="font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:.14em;color:#6E6558;cursor:pointer">← ALL WORK</div>
+  <div style="display:flex;flex-wrap:wrap;gap:24px;align-items:flex-end;justify-content:space-between;margin-top:26px">
+    <div style="min-width:0">
+      <div style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.18em;color:{{ accent }}">03 &nbsp;/&nbsp; PERSONAL PRODUCT</div>
+      <h1 style="font-family:'Instrument Serif',serif;font-weight:400;font-size:clamp(36px,5.6vw,68px);line-height:1.04;margin:14px 0 0;letter-spacing:-.01em">Rebuilding My Portfolio</h1>
+      <p style="margin:14px 0 0;font-size:clamp(16px,1.5vw,19px);line-height:1.55;color:#4A423A;max-width:52ch;text-wrap:pretty">Treating my own portfolio like a product: who it's for, what job it does, and whether it actually works.</p>
+    </div>
+    <div onClick="{{ toggleSkim }}" style="display:flex;align-items:center;gap:10px;border:1px solid #1A1714;border-radius:100px;padding:8px 16px;cursor:pointer;white-space:nowrap;background:{{ skimBg }};color:{{ skimFg }}">
+      <span style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.14em">60-SECOND SKIM</span>
+      <span style="width:26px;height:15px;border-radius:100px;border:1px solid currentColor;position:relative;display:inline-block"><span style="position:absolute;top:2px;left:{{ skimKnob }};width:9px;height:9px;border-radius:50%;background:currentColor;transition:left .18s ease"></span></span>
+    </div>
+  </div>
+  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:20px;margin-top:34px;padding:18px 0;border-top:1px solid #1A1714;border-bottom:1px solid #E3DCD1">
+    <div><div style="font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.16em;color:#6E6558">ROLE</div><div style="font-size:15px;margin-top:6px">Product owner, researcher &amp; designer</div></div><div><div style="font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.16em;color:#6E6558">WHEN</div><div style="font-size:15px;margin-top:6px">2026</div></div><div><div style="font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.16em;color:#6E6558">TOOLS</div><div style="font-size:15px;margin-top:6px">Claude, ChatGPT</div></div><div><div style="font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.16em;color:#6E6558">OUTCOME</div><div style="font-size:15px;margin-top:6px;color:{{ accent }}">You tell me!</div></div>
+  </div>
+  <sc-if value="{{ skim }}" hint-placeholder-val="{{ false }}">
+    <div style="margin-top:38px">
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:clamp(14px,3vw,40px);padding:22px 0;border-bottom:1px solid #E3DCD1">
+        <div style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.16em;color:#6E6558">SITUATION</div>
+        <div style="grid-column:span 2;font-size:16px;line-height:1.5;text-wrap:pretty">Hiring managers give each candidate a few minutes. My portfolio made them hunt for my role, my contribution, and the result.</div>
+      </div>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:clamp(14px,3vw,40px);padding:22px 0;border-bottom:1px solid #E3DCD1">
+        <div style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.16em;color:#6E6558">WHAT I DID</div>
+        <div style="grid-column:span 2;font-size:16px;line-height:1.5;text-wrap:pretty">Defined the persona, jobs-to-be-done, and evaluation criteria. Built a storyboard and two divergent prototypes to test. Created an agentic UX harness for additional testing and a conversational AI to speak to my work. Designed this website.</div>
+      </div>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:clamp(14px,3vw,40px);padding:22px 0;border-bottom:1px solid #E3DCD1">
+        <div style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.16em;color:#6E6558">RESULT</div>
+        <div style="grid-column:span 2;font-size:16px;line-height:1.5;text-wrap:pretty">You tell me! I'd love your feedback.</div>
+      </div>
+      <div onClick="{{ toggleSkim }}" style="margin-top:24px;font-size:15px;border-bottom:1px solid #1A1714;display:inline-block;padding-bottom:3px;cursor:pointer">Read the full case study →</div>
+    </div>
+  </sc-if>
+  <sc-if value="{{ full }}" hint-placeholder-val="{{ true }}">
+  <div>
+    <div style="margin-top:36px;border:1px solid #E3DCD1;border-radius:4px;overflow:hidden;background:#fff">
+      <div style="height:30px;background:#F1EBE2;border-bottom:1px solid #E7E0D5;display:flex;align-items:center;gap:6px;padding:0 12px"><div style="width:8px;height:8px;border-radius:50%;background:#D6CCBE"></div><div style="width:8px;height:8px;border-radius:50%;background:#D6CCBE"></div><div style="width:8px;height:8px;border-radius:50%;background:#D6CCBE"></div></div>
+      <img src="assets/p3-hero.png" alt="The new portfolio homepage" style="width:100%;display:block">
+    </div>
+    <div style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.12em;color:#6E6558;margin-top:10px">HOMEPAGE</div>
+    <div style="margin-top:clamp(44px,6vw,80px)">
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:clamp(20px,4vw,56px);padding-top:26px;border-top:1px solid #1A1714">
+        <div><div style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.16em;color:{{ accent }};position:sticky;top:90px">01 &nbsp;SITUATION</div></div>
+        <div style="grid-column:span 2;min-width:0">
+          <h3 style="font-family:'Instrument Serif',serif;font-weight:400;font-size:clamp(24px,2.8vw,34px);line-height:1.15;margin:0;">A few minutes per candidate, and a site that made them hunt</h3>
+          <p style="margin:16px 0 0;font-size:16.5px;line-height:1.7;color:#4A423A;max-width:58ch;text-wrap:pretty">My old portfolio was a Wix template that prioritized the back-end edits, not the front-end view.</p>
+          <div style="margin-top:24px;padding:20px 22px;background:#F1EBE2;border-radius:4px">
+            <div style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.16em;color:#6E6558">THE TASK</div>
+            <p style="margin:8px 0 0;font-size:16.5px;line-height:1.6;text-wrap:pretty">Get a hiring manager from first click to a confident decision.</p>
+          </div>
+          
+        </div>
+      </div>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:clamp(20px,4vw,56px);padding-top:26px;margin-top:clamp(40px,5vw,64px);border-top:1px solid #E3DCD1">
+        <div><div style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.16em;color:{{ accent }};position:sticky;top:90px">02 &nbsp;RESEARCH</div></div>
+        <div style="grid-column:span 2;min-width:0">
+          <h3 style="font-family:'Instrument Serif',serif;font-weight:400;font-size:clamp(24px,2.8vw,34px);line-height:1.15;margin:0;">Define the job before designing the page</h3>
+          <p style="margin:16px 0 0;font-size:16.5px;line-height:1.7;color:#4A423A;max-width:58ch;text-wrap:pretty">I wrote a persona, positioning statement, jobs-to-be-done, major epics, and child stories. Then, I mapped user actions and behaviors to tangible metrics.</p><div style="margin-top:16px;padding:20px 22px;border:1px solid #E3DCD1;border-radius:4px;background:#fff">
+            <div style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.16em;color:#6E6558">PERSONA</div>
+            <p style="margin:8px 0 0;font-size:16.5px;line-height:1.6;text-wrap:pretty">John, a busy senior manager. They want someone reliable, visually thoughtful, and good across functions.&nbsp;</p>
+          </div>
+          <div style="margin-top:26px;border:1px solid #E3DCD1;border-radius:4px;background:#fff;padding:22px">
+            <div style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.16em;color:#6E6558">ACTIONS &amp; METRICS</div>
+            <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,110px),1fr));gap:14px;margin-top:18px">
+              <div style="border-top:2px solid #DCD4C8;padding-top:12px;min-width:0"><div style="font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.14em;color:#6E6558">01</div><div style="font-size:15px;font-weight:500;margin-top:6px">Arrive</div><div style="font-size:13.5px;color:#6E6558;line-height:1.5;margin-top:6px">A qualified reviewer reaches the site</div></div>
+              <div style="border-top:2px solid #DCD4C8;padding-top:12px;min-width:0"><div style="font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.14em;color:#6E6558">02</div><div style="font-size:15px;font-weight:500;margin-top:6px">Orient</div><div style="font-size:13.5px;color:#6E6558;line-height:1.5;margin-top:6px">80% of users can name my role and work within 60 seconds</div></div>
+              <div style="border-top:2px solid #DCD4C8;padding-top:12px;min-width:0"><div style="font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.14em;color:#6E6558">03</div><div style="font-size:15px;font-weight:500;margin-top:6px">Enter</div><div style="font-size:13.5px;color:#6E6558;line-height:1.5;margin-top:6px">80% of users open a relevant project within 60 seconds</div></div>
+              <div style="border-top:2px solid #DCD4C8;padding-top:12px;min-width:0"><div style="font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.14em;color:#6E6558">04</div><div style="font-size:15px;font-weight:500;margin-top:6px">Review</div><div style="font-size:13.5px;color:#6E6558;line-height:1.5;margin-top:6px">60% of users finish a project and can name my contribution and result</div></div>
+              <div style="border-top:2px solid {{ accent }};padding-top:12px;min-width:0"><div style="font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.14em;color:#6E6558">05</div><div style="font-size:15px;font-weight:500;margin-top:6px">Act</div><div style="font-size:13.5px;color:#6E6558;line-height:1.5;margin-top:6px">60% of users take a second step: another project, the resume, or contact</div></div>
+            </div>
+          </div>
+          <h3 style="font-family:'Instrument Serif',serif;font-weight:400;font-size:clamp(24px,2.8vw,34px);line-height:1.15;margin:0;margin-top:clamp(36px,4vw,52px)">Learn from comparables</h3>
+          <p style="margin:16px 0 0;font-size:16.5px;line-height:1.7;color:#4A423A;max-width:58ch;text-wrap:pretty">I compared three families of sites: long-form case studies, like my old portfolio, up-front visuals, like Dribbble, Instagram, and Behance, and data-heavy job sites, like LinkedIn.</p>
+          <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:16px;margin-top:26px">
+            <div style="min-width:0"><div style="border:1px solid #E3DCD1;border-radius:3px;overflow:hidden;background:#fff;height:clamp(180px,20vw,240px)"><img src="assets/p3-comp-wix.png" alt="Sarah's previous Wix portfolio" style="width:100%;height:100%;object-fit:cover;object-position:top;display:block"></div><div style="font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.1em;color:#6E6558;margin-top:8px">OLD PORTFOLIO - LONG-FORM</div></div>
+            <div style="min-width:0"><div style="border:1px solid #E3DCD1;border-radius:3px;overflow:hidden;background:#fff;height:clamp(180px,20vw,240px)"><img src="assets/p3-comp-behance.png" alt="Behance profile grid" style="width:100%;height:100%;object-fit:cover;object-position:top;display:block"></div><div style="font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.1em;color:#6E6558;margin-top:8px">BEHANCE - UP-FRONT VISUALS</div></div>
+            <div style="min-width:0"><div style="border:1px solid #E3DCD1;border-radius:3px;overflow:hidden;background:#fff;height:clamp(180px,20vw,240px)"><img src="assets/p3-comp-linkedin.jpg" alt="LinkedIn profile" style="width:100%;height:100%;object-fit:cover;object-position:top;display:block"></div><div style="font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.1em;color:#6E6558;margin-top:8px">LINKEDIN - DATA-HEAVY</div></div>
+          </div>
+        </div>
+      </div>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:clamp(20px,4vw,56px);padding-top:26px;margin-top:clamp(40px,5vw,64px);border-top:1px solid #E3DCD1">
+        <div><div style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.16em;color:{{ accent }};position:sticky;top:90px">03 &nbsp;DESIGN</div></div>
+        <div style="grid-column: span 2; min-width: 0; width: 653px; height: 1069px">
+          <h3 style="font-family:'Instrument Serif',serif;font-weight:400;font-size:clamp(24px,2.8vw,34px);line-height:1.15;margin:0;">Start with storyboarding, prototyping, and testing</h3><p style="margin:16px 0 0;font-size:16.5px;line-height:1.7;color:#4A423A;max-width:58ch;text-wrap:pretty">I created a storyboard, then built two low-fidelity prototypes to test.</p><p style="margin: 16px 0 0; font-size: 10.5px; line-height: 1.7; color: #4A423A; max-width: 58ch; text-wrap: pretty; font-family: IBM Plex Mono">Prototype Link:&nbsp;<a href="https://claude.ai/design/p/266a4406-1a2f-4c41-8084-2b98bd133f21?amp=&amp;file=Sarah+Portfolio+Wireframes.dc.html">Portfolio Prototype Project</a></p>
+          <div style="display: grid; grid-template-columns: repeat(auto-fit,minmax(220px,1fr)); gap: 16px; margin-top: 26px; width: 659px; height: 547px">
+            <div style="min-width: 0; width: 660px; height: 380px"><div style="border: 1px solid #E3DCD1; border-radius: 3px; overflow: hidden; background: #fff; height: 520px; width: 652px"><img src="./pasted-1790444086091-0-muio6ir5-l29q.png" alt="pasted-1790444086091-0" width="1116" height="966" style="max-width: 100%; height: 495px; display: block; object-fit: cover; width: 628px; aspect-ratio: 1116 / 966"></div><div style="font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.1em;color:#6E6558;margin-top:8px">STORYBOARD</div></div>
+            
+          </div>
+          
+          
+          <div style="display: grid; grid-template-columns: repeat(auto-fit,minmax(220px,1fr)); gap: 16px; margin-top: 26px; margin-bottom: 26px">
+            <div style="min-width:0"><div style="border:1px solid #E3DCD1;border-radius:3px;overflow:hidden;background:#fff;height:clamp(180px,20vw,240px)"><img src="assets/p3-proto-a.png" alt="Design A narrative-entry wireframe" style="width:100%;height:100%;object-fit:cover;object-position:top;display:block"></div><div style="font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.1em;color:#6E6558;margin-top:8px">DESIGN A — NARRATIVE ENTRY</div></div>
+            <div style="min-width:0"><div style="border:1px solid #E3DCD1;border-radius:3px;overflow:hidden;background:#fff;height:clamp(180px,20vw,240px)"><img src="assets/p3-proto-b.png" alt="Design B immediate-work wireframe" style="width:100%;height:100%;object-fit:cover;object-position:top;display:block"></div><div style="font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.1em;color:#6E6558;margin-top:8px">DESIGN B — ALL THE WORK, IMMEDIATELY</div></div>
+          </div>
+          <div style="min-width: 0; padding: 20px 22px; background: #F1EBE2; border-radius: 4px; align-self: start; margin-top: 20px; width: 652px; height: 88px; padding-bottom: 0px">
+              <div style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.16em;color:#6E6558">WHAT TESTING CHANGED</div>
+              <p style="margin:8px 0 0;font-size:15.5px;line-height:1.6;text-wrap:pretty">Users preferred to see as much as possible, with as few clicks as possible.</p>
+            </div>
+          
+          
+            
+            
+          <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px;margin-top:26px">
+            
+            <div style="min-width:0"></div>
+          </div>
+        </div>
+      </div><div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:clamp(20px,4vw,56px);padding-top:26px;margin-top:clamp(40px,5vw,64px);border-top:1px solid #E3DCD1">
+        <div><div style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.16em;color:{{ accent }};position:sticky;top:90px">04&nbsp; AI</div></div>
+        <div style="grid-column: span 2; min-width: 0; position: static">
+          
+          
+          
+          
+          
+          
+          <h3 style="font-family: 'Instrument Serif',serif; font-weight: 400; font-size: clamp(24px,2.8vw,34px); line-height: 1.15; margin: 0">An agentic UX harness, and a digital twin</h3><p style="margin:16px 0 0;font-size:16.5px;line-height:1.7;color:#4A423A;max-width:58ch;text-wrap:pretty">I built an agentic UX harness to test this site, and a conversational agent that answers interview questions from the site and my resume.</p>
+          
+            
+            
+          <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px;margin-top:26px">
+            <div style="min-width:0"><div style="border:1px solid #E3DCD1;border-radius:3px;overflow:hidden;background:#fff;height:clamp(180px,20vw,240px)"><img src="assets/p3-agent.png" alt="Portfolio evidence checker showing a passing agent trace" style="width:100%;height:100%;object-fit:cover;object-position:top;display:block"></div><div style="font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.1em;color:#6E6558;margin-top:8px">AGENTIC UX HARNESS</div></div>
+            <div style="min-width:0"><div style="border:1px solid #E3DCD1;border-radius:3px;overflow:hidden;background:#fff;height:clamp(180px,20vw,240px)"><img src="./pasted-1790444513582-0-muiofogx-8ekc.png" alt="pasted-1790444513582-0" width="1084" height="454" style="max-width: 100%; height: auto; display: block; object-fit: cover; width: 1084px; aspect-ratio: 1084 / 454"></div><div style="font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.1em;color:#6E6558;margin-top:8px">CONVERSATIONAL UX / DIGITAL TWIN</div></div>
+          </div>
+        </div>
+      </div>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:clamp(20px,4vw,56px);padding-top:26px;margin-top:clamp(40px,5vw,64px);border-top:1px solid #E3DCD1">
+        <div><div style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.16em;color:{{ accent }};position:sticky;top:90px">05&nbsp; TESTING</div></div>
+        <div style="grid-column:span 2;min-width:0">
+          <h3 style="font-family:'Instrument Serif',serif;font-weight:400;font-size:clamp(24px,2.8vw,34px);line-height:1.15;margin:0;">Reviewers wanted everything, and fast</h3>
+          <p style="margin:16px 0 0;font-size:16.5px;line-height:1.7;color:#4A423A;max-width:58ch;text-wrap:pretty">I ran moderated think-aloud sessions with people who review portfolios for a living. Five tasks, each scored true or false: find my role, pick a project, find the result, reach a second project, and connect my background to the work.</p>
+          <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:20px;margin-top:28px;padding:22px 0;border-top:1px solid #E3DCD1;border-bottom:1px solid #E3DCD1">
+            <div style="min-width:0"><div style="font-family:'Instrument Serif',serif;font-size:clamp(34px,4vw,48px);line-height:1">9/10</div><div style="font-size:13.5px;color:#6E6558;line-height:1.45;margin-top:8px">How easy it was to understand what I did</div></div>
+            <div style="min-width:0"><div style="font-family:'Instrument Serif',serif;font-size:clamp(34px,4vw,48px);line-height:1">10/10</div><div style="font-size:13.5px;color:#6E6558;line-height:1.45;margin-top:8px">How easy it was to navigate</div></div>
+            <div style="min-width:0"><div style="font-family:'Instrument Serif',serif;font-size:clamp(34px,4vw,48px);line-height:1">7/10</div><div style="font-size:13.5px;color:#6E6558;line-height:1.45;margin-top:8px">Overall content, with a clear ask for a stronger intro</div></div>
+          </div>
+          <div style="margin-top:28px;padding-left:22px;border-left:2px solid {{ accent }}">
+            <div style="font-family:'Instrument Serif',serif;font-style:italic;font-size:clamp(19px,2vw,24px);line-height:1.45;text-wrap:pretty">“I wanted to hear about your best project. I figured that would be a better place to start than looking at a CV.”</div>
+            <div style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.14em;color:#6E6558;margin-top:12px">USABILITY TEST PARTICIPANT</div>
+          </div>
+          <div style="margin-top:30px">
+            <div style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.16em;color:#6E6558">WHAT I HEARD → WHAT I CHANGED</div>
+            <div style="margin-top:8px">
+              <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:6px 24px;padding:14px 0;border-bottom:1px solid #EFE9E0"><div style="font-size:15px;color:#6E6558;text-wrap:pretty">Wanted to see every project from the start</div><div style="font-size:15px;text-wrap:pretty">Design B became the baseline</div></div>
+              <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:6px 24px;padding:14px 0;border-bottom:1px solid #EFE9E0"><div style="font-size:15px;color:#6E6558;text-wrap:pretty">Unsure what the intro button would do</div><div style="font-size:15px;text-wrap:pretty">Buttons now name the action they perform</div></div>
+              <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:6px 24px;padding:14px 0;border-bottom:1px solid #EFE9E0"><div style="font-size:15px;color:#6E6558;text-wrap:pretty">Moved to the next project from the bottom of the page</div><div style="font-size:15px;text-wrap:pretty">Simplified next steps</div></div>
+              <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:6px 24px;padding:14px 0;border-bottom:1px solid #EFE9E0"><div style="font-size:15px;color:#6E6558;text-wrap:pretty">Wanted more detail in the first-page blurb</div><div style="font-size:15px;text-wrap:pretty">Sharper role and value statement up top</div></div>
+              <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:6px 24px;padding:14px 0;border-bottom:1px solid #EFE9E0"><div style="font-size:15px;color:#6E6558;text-wrap:pretty">Mixed feelings about a summary view</div><div style="font-size:15px;text-wrap:pretty">The 60-second skim stays, but it's optional</div></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:clamp(20px,4vw,56px);padding-top:26px;margin-top:clamp(40px,5vw,64px);border-top:1px solid #E3DCD1">
+        <div><div style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.16em;color:{{ accent }};position:sticky;top:90px">06&nbsp; RESULTS</div></div>
+        <div style="grid-column:span 2;min-width:0">
+          <h3 style="font-family:'Instrument Serif',serif;font-weight:400;font-size:clamp(24px,2.8vw,34px);line-height:1.15;margin:0;">A portfolio built from test notes</h3>
+          <p style="margin:16px 0 0;font-size:16.5px;line-height:1.7;color:#4A423A;max-width:58ch;text-wrap:pretty">You're using the result. The immediate-work design is the new baseline: role and value up front, every project one click away, a labeled result in each case study, and several ways to move between them.<br></p>
+        </div>
+      </div>
+    </div>
+  </div>
+  </sc-if>
+  <div style="display:flex;flex-wrap:wrap;gap:14px;margin-top:clamp(48px,7vw,90px);padding-top:26px;border-top:1px solid #1A1714">
+    <div onClick="{{ goP2 }}" style="border:1px solid #1A1714;border-radius:100px;padding:11px 24px;font-size:14.5px;cursor:pointer">← Previous project: Demystifying Billing</div>
+  </div>
+</div>
+</sc-if>
+
+<sc-if value="{{ onAbout }}">
+<div style="max-width:1180px;margin:0 auto;padding:clamp(40px,6vw,80px) clamp(20px,4vw,56px) clamp(60px,8vw,100px)">
+  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:clamp(28px,5vw,72px);align-items:start">
+    <div style="min-width:0">
+      <h1 style="font-family:'Instrument Serif',serif;font-weight:400;font-size:clamp(34px,5vw,58px);line-height:1.08;margin:0;max-width:16ch;text-wrap:balance">I manage the full lifecycle of digital products.</h1>
+      <p style="margin:22px 0 0;font-size:17px;line-height:1.7;color:#4A423A;max-width:52ch;text-wrap:pretty">I lead cross-functional teams that deliver value-driven, user-centric platform experiences. I collaborate with clients and stakeholders to integrate design into technology solutions, serving as the expert on UI/UX design and research strategy.<br></p>
+      
+
+      
+      <div style="display:flex;flex-direction:column;gap:0;margin-top:14px">
+        
+        
+      </div>
+
+      <div style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.18em;color:#6E6558;margin-top:44px">WHAT I DO BEST</div>
+      <div style="display:flex;flex-wrap:wrap;gap:9px;margin-top:14px">
+        <span style="border:1px solid #DCD4C8;border-radius:100px;padding:6px 15px;font-size:13.5px;color:#4A423A">Product strategy</span>
+        <span style="border:1px solid #DCD4C8;border-radius:100px;padding:6px 15px;font-size:13.5px;color:#4A423A">UX research</span>
+        <span style="border:1px solid #DCD4C8;border-radius:100px;padding:6px 15px;font-size:13.5px;color:#4A423A">UX design</span><span style="border:1px solid #DCD4C8;border-radius:100px;padding:6px 15px;font-size:13.5px;color:#4A423A">AI Strategy</span><span style="border:1px solid #DCD4C8;border-radius:100px;padding:6px 15px;font-size:13.5px;color:#4A423A">Platform configuration</span>
+        <span style="border:1px solid #DCD4C8;border-radius:100px;padding:6px 15px;font-size:13.5px;color:#4A423A">Prototyping</span>
+        <span style="border:1px solid #DCD4C8;border-radius:100px;padding:6px 15px;font-size:13.5px;color:#4A423A">Design systems</span>
+        <span style="border:1px solid #DCD4C8;border-radius:100px;padding:6px 15px;font-size:13.5px;color:#4A423A">Stakeholder facilitation</span>
+        <span style="border:1px solid #DCD4C8;border-radius:100px;padding:6px 15px;font-size:13.5px;color:#4A423A">Usability testing</span>
+      </div>
+    </div>
+
+    <div style="min-width:0;position:sticky;top:96px">
+      <div style="border-radius:4px;overflow:hidden;background:#EDEDEA;margin-bottom:18px"><img src="assets/sarah.jpg" alt="Portrait of Sarah Sukin" style="width:100%;display:block"></div>
+      <a href="mailto:sarahsukin@gmail.com?subject=Sarah's%20Portfolio" style="border: 1px solid #1A1714; border-radius: 3px; padding: 13px 18px; font-size: 15px; display: flex; justify-content: space-between; align-items: center; margin-top: 10px; margin-bottom: 10px"><span>sarahsukin@gmail.com</span><span style="color:#6E6558">→</span></a><a href="https://www.linkedin.com/in/sarah-sukin/" target="_blank" rel="noopener" style="border: 1px solid #DCD4C8; border-radius: 3px; padding: 13px 18px; font-size: 15px; display: flex; justify-content: space-between; align-items: center; color: #4A423A; margin-top: 18px; margin-bottom: 18px"><span>linkedin.com/in/sarah-sukin</span><span style="color:#6E6558">→</span></a><div style="border:1px solid #E3DCD1;border-radius:4px;background:#fff;padding:26px">
+        <div style="font-family:'Instrument Serif',serif;font-size:20px;line-height:1.45;font-style:italic;text-wrap:pretty">“I just wanted to say how much we appreciate the team. Working with them has been effortless. What we asked for was what they built. So get excited about when you have a chance to work with them.”</div>
+        <div style="font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.14em;color:#6E6558;margin-top:16px">ASSISTANT DEPUTY ADMINISTRATOR, FEDERAL AGENCY</div>
+      </div>
+      <div style="display:flex;flex-direction:column;gap:10px;margin-top:18px">
+        
+        
+      </div>
+      <div onClick="{{ goHome }}" style="margin-top:22px;font-size:14.5px;border-bottom:1px solid #1A1714;display:inline-block;padding-bottom:3px;cursor:pointer">← Back to the work</div>
+    </div>
+  </div>
+</div>
+</sc-if>
+
+<sc-if value="{{ onAbout }}">
+<div aria-hidden="true" style="max-width:1180px;margin:0 auto;padding:0 clamp(20px,4vw,56px);position:relative;height:0;pointer-events:none">
+  <div data-ss-char="" style="position:absolute;bottom:0;left:72%;width:130px;animation:ss-walk 2.9s cubic-bezier(.42,0,.58,1) both">
+    <div style="position: absolute; left: -2px; bottom: -9px; width: 96px; height: 14px; border-radius: 50%; background: rgba(26,23,20,.09); animation: ss-shadow-out .5s ease 4.55s forwards; display: none"></div>
+    <svg viewBox="0 0 130 178" style="width: 130px; height: 178px; display: none; overflow: visible">
+      <g style="animation:ss-sit .6s cubic-bezier(.34,1.3,.5,1) 4.5s both">
+        <g style="animation:ss-bob .46s ease-in-out 0s 6 both">
+          <g style="transform-box:fill-box;transform-origin:50% 4%;animation:ss-step-a .46s ease-in-out 0s 6 both,ss-legs-sit .5s ease 4.55s forwards">
+            <rect x="54" y="112" width="11" height="56" rx="5.5" fill="#2A2622"></rect>
+            <rect x="49" y="162" width="17" height="10" rx="5" fill="#1A1714"></rect>
+          </g>
+          <g style="transform-box:fill-box;transform-origin:50% 4%;animation:ss-step-b .46s ease-in-out 0s 6 both,ss-legs-sit .5s ease 4.55s forwards">
+            <rect x="67" y="112" width="11" height="56" rx="5.5" fill="#3A342E"></rect>
+            <rect x="64" y="162" width="17" height="10" rx="5" fill="#241F1B"></rect>
+          </g>
+          <g style="transform-box:fill-box;transform-origin:50% 6%;animation:ss-arm-swing .46s ease-in-out 0s 6 both">
+            <rect x="50" y="66" width="9" height="40" rx="4.5" fill="#1F4D4A"></rect>
+            <circle cx="54.5" cy="107" r="5.5" fill="#EFC6A4"></circle>
+          </g>
+          <path d="M44 44c0-15 9-26 22-26s22 11 22 26c0 12-3 18-3 26 0 14 3 24 3 34H44c0-10 3-20 3-34 0-8-3-14-3-26z" fill="#C08A50"></path>
+          <path d="M50 112h32c2 0 3 1 3 3v6H47v-6c0-2 1-3 3-3z" fill="#1A1714" opacity=".14"></path>
+          <path d="M52 60h28c4 0 7 3 7 7v38c0 4-3 7-7 7H52c-4 0-7-3-7-7V67c0-4 3-7 7-7z" fill="#1F4D4A"></path>
+          <rect x="59" y="46" width="14" height="18" rx="6" fill="#EFC6A4"></rect>
+          <circle cx="66" cy="34" r="17" fill="#EFC6A4"></circle>
+          <path d="M49 36c0-12 8-20 18-20s17 8 17 19c0 5-2 7-2 7s-1-9-6-11c-4-2-9 1-15-1-4-2-6-6-6-6s-3 4-3 10c0 4 1 7 1 7s-4-1-4-4z" fill="#C08A50"></path>
+          <circle cx="61" cy="34" r="1.7" fill="#1A1714"></circle>
+          <circle cx="71" cy="34" r="1.7" fill="#1A1714"></circle>
+          <path d="M62.5 40c1.8 1.8 5.2 1.8 7 0" stroke="#1A1714" stroke-width="1.6" stroke-linecap="round" fill="none"></path>
+          <circle cx="55" cy="39" r="3" fill="#E2A17C" opacity=".5"></circle>
+          <circle cx="77" cy="39" r="3" fill="#E2A17C" opacity=".5"></circle>
+          <g style="transform-box:fill-box;transform-origin:50% 6%;animation:ss-arm-swing .46s ease-in-out 0s 6 both,ss-wave 1.35s ease-in-out 2.95s 1 forwards">
+            <rect x="73" y="66" width="9" height="40" rx="4.5" fill="#265B57"></rect>
+            <circle cx="77.5" cy="107" r="5.5" fill="#EFC6A4"></circle>
+          </g>
+        </g>
+      </g>
+    </svg>
+    <div style="position:absolute;left:96px;bottom:126px;background:#fff;border:1px solid #E3DCD1;border-radius:100px;padding:6px 14px;font-family:'Instrument Serif',serif;font-style:italic;font-size:17px;color:#1A1714;white-space:nowrap;opacity:0;animation:ss-hi 2s ease 3.05s both">hi!</div>
+  </div>
+</div>
+</sc-if>
+
+<div style="border-top:1px solid #E3DCD1;margin-top:20px">
+  <div style="max-width:1180px;margin:0 auto;padding:32px clamp(20px,4vw,56px);display:flex;flex-wrap:wrap;gap:18px;justify-content:space-between;align-items:center">
+    <div style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.14em;color:#6E6558">© 2026 SARAH SUKIN</div>
+    <div style="display:flex;gap:24px;font-size:14px">
+      <a href="mailto:sarahsukin@gmail.com?subject=Sarah's%20Portfolio">Email</a>
+      <a href="https://www.linkedin.com/in/sarah-sukin/" target="_blank" rel="noopener">LinkedIn</a>
+    </div>
+  </div>
+</div>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;accentColor&quot;:{&quot;editor&quot;:&quot;color&quot;,&quot;default&quot;:&quot;#B5502F&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;options&quot;:[&quot;#B5502F&quot;,&quot;#A8763C&quot;,&quot;#5A6B5D&quot;,&quot;#1A1714&quot;],&quot;section&quot;:&quot;Theme&quot;}}">
+class Component extends DCLogic {
+  state = { screen: 'home', skim: false, filter: 'All', q: '', openRow: null, qi: 0, billView: 'bill' };
+
+  quotes() {
+    return [
+      { who: 'ACTING BRANCH CHIEF, FEDERAL AGENCY', text: '“My colleagues and I often find ourselves noting how your authentic and graceful approach to interacting with stakeholders is something that brings us confidence in having partnered with [your team] on this project. It is truly impressive.”' }
+    ];
+  }
+
+  go(screen) { this.setState({ screen, skim: false, openRow: null, billView: 'bill' }); window.scrollTo(0, 0); }
+
+  assets() {
+    return [
+      { kind: 'ASSET', title: 'Cloud migration accelerator', meta: 'Code repository \u00b7 updated 3 days ago', tags: ['Code repos'] },
+      { kind: 'PAPER', title: 'Zero-trust architecture for federal clients', meta: 'Whitepaper \u00b7 14 min read', tags: ['Whitepapers'] },
+      { kind: 'DEMO', title: 'Predictive maintenance demo environment', meta: 'Live demo \u00b7 request access', tags: ['Demos'] },
+      { kind: 'EXPERT', title: 'Dana Whitfield', meta: 'Principal, data platforms \u00b7 4 assets contributed', tags: ['Experts'] },
+      { kind: 'ASSET', title: 'Agile delivery playbook templates', meta: 'Collateral \u00b7 used on 22 engagements', tags: ['Code repos'] },
+      { kind: 'PAPER', title: 'TBM taxonomy: a practitioner primer', meta: 'Whitepaper \u00b7 9 min read', tags: ['Whitepapers'] },
+      { kind: 'EXPERT', title: 'Marcus Oyelaran', meta: 'Director, AI engineering \u00b7 available for demos', tags: ['Experts'] },
+      { kind: 'DEMO', title: 'Case management sandbox', meta: 'Live demo \u00b7 self-serve', tags: ['Demos'] },
+    ];
+  }
+
+  rows() {
+    return [
+      { id: 'sec', name: 'Security & Compliance', pool: 'External Labor', total: '$10,200', prev: '$9,400', prevPct: '74%', curPct: '80%', delta: '+8.5%', up: true,
+        why: 'Two additional compliance engineers joined the account in February for the annual audit. This is monthly labor, so it will stay at this level until the audit closes in April.',
+        termLabel: 'EXTERNAL LABOR', term: 'Contractor hours billed directly to your department, at the rate in your service agreement.' },
+      { id: 'aws', name: 'Compute \u2014 AWS Direct', pool: 'Outside Services', total: '$10,000', prev: '$7,850', prevPct: '61%', curPct: '78%', delta: '+27.4%', up: true,
+        why: 'Usage-based, and February included the load-testing window for the new case management release. Usage charges fluctuate with what you actually consume \u2014 this is the single largest driver of your month-over-month change.',
+        termLabel: 'USAGE', term: 'Charges that vary with consumption rather than a fixed monthly fee. Reviewed nightly, billed in arrears.' },
+      { id: 'azure', name: 'Compute \u2014 Azure Direct', pool: 'Outside Services', total: '$9,800', prev: '$9,800', prevPct: '76%', curPct: '76%', delta: 'no change', up: null,
+        why: 'Flat month over month. Reserved capacity at a committed rate, so this line is predictable until the reservation renews in October.',
+        termLabel: 'RESERVED CAPACITY', term: 'Pre-purchased compute at a fixed rate. Does not vary with usage during the commitment term.' },
+      { id: 'sw', name: 'End User \u2014 Software', pool: 'Software', total: '$1,000', prev: '$0', prevPct: '0%', curPct: '8%', delta: 'new', up: true,
+        why: 'A one-time Adobe Illustrator license purchased in February. One-time charges appear once and will not repeat on your March bill.',
+        termLabel: 'ONE-TIME', term: 'A single charge for a purchase or setup activity. It will not recur.' },
+      { id: 'cred', name: 'IT Management \u2014 credit', pool: 'External Labor', total: '-$9,800', prev: '$0', prevPct: '0%', curPct: '76%', delta: 'credit', up: false,
+        why: 'A correction for labor billed to your department in January that belonged to a shared services pool. Credits appear as negative amounts and reduce your total.',
+        termLabel: 'ADJUSTMENT', term: 'A correction to a previous charge, applied to the current statement.' },
+    ];
+  }
+
+  renderVals() {
+    const s = this.state;
+    const accent = this.props.accentColor || '#B5502F';
+    const chipNames = ['All', 'Code repos', 'Whitepapers', 'Demos', 'Experts'];
+    const q = s.q.trim().toLowerCase();
+    const results = this.assets().filter(a => {
+      const okTag = s.filter === 'All' || a.tags.indexOf(s.filter) > -1;
+      const okQ = !q || (a.title + ' ' + a.meta + ' ' + a.kind).toLowerCase().indexOf(q) > -1;
+      return okTag && okQ;
+    });
+
+    const qs = this.quotes();
+    const qi = ((s.qi % qs.length) + qs.length) % qs.length;
+    const bv = s.billView || 'bill';
+    const on = { bg: '#E6F4FA', c: '#1480A0' }, off = { bg: '#fff', c: '#A0A6AD' };
+    const P = ['#2B5BB5', '#29A8E0', '#1480A0', '#9A9A9A', '#1C2B4F'];
+    const months = [['Sept',[18,38,18,20,18]],['Oct',[18,65,35,20,20]],['Nov',[18,65,38,20,18]],['Dec',[18,68,52,20,22]],['Jan',[18,42,12,6,18]],['Feb',[18,45,42,18,18]]];
+    const chartBars = bv === 'breakdown'
+      ? months.map(([label, segs]) => ({ label, w: '20px', h: 'auto', bg: 'transparent', border: 'none', segs: segs.map((v, i) => ({ h: v + 'px', c: P[i] })) }))
+      : [['Q1 - Actual', 95, true], ['Q2 - Estimated', 128], ['Q3 - Estimated', 128], ['Q4 - Estimated', 150]].map(([label, v, act]) => ({ label, w: '22px', h: v + 'px', bg: act ? '#29A8E0' : '#EEF7FC', border: act ? 'none' : '1.5px dashed #1E9AD6', segs: [] }));
+    const bdRows = [['Application',0,'$10,000','$200'],['Compute',3,'$9,000','$100'],['Data Center',2,'$10,000','$200'],['Delivery',1,'$10,000','$10,000'],['End User',0,'$9,000','$9,000'],['IT Management',4,'$10,000','$200'],['Platform',3,'$9,000','$100'],['Security & Compliance',2,'$10,000','$200'],['Storage',1,'$10,000','$10,000']].map(([name, ci, a, b]) => ({ name, c: ci === 0 && name === 'Application' ? '#1C2B4F' : P[ci], a, b }));
+    const billSet = v => () => this.setState({ billView: v });
+
+    return {
+      billIsBill: bv === 'bill', billIsReport: bv !== 'bill', billIsTotal: bv === 'total', billIsBd: bv === 'breakdown',
+      billTitle: bv === 'bill' ? 'My Bill' : 'Reports',
+      reportTitle: bv === 'breakdown' ? 'BILLING LAST 6 MONTHS' : 'QUARTERLY BILLING & ESTIMATEDS',
+      navBillLine: bv === 'bill' ? '#1480A0' : 'transparent', navRepLine: bv !== 'bill' ? '#1480A0' : 'transparent',
+      totBg: bv === 'total' ? on.bg : off.bg, totColor: bv === 'total' ? on.c : off.c,
+      bdBg: bv === 'breakdown' ? on.bg : off.bg, bdColor: bv === 'breakdown' ? on.c : off.c,
+      chartBars, bdRows,
+      billGoBill: billSet('bill'), billGoTotal: billSet('total'), billGoBd: billSet('breakdown'),
+      accent,
+      qText: qs[qi].text, qWho: qs[qi].who,
+      qCount: (qi + 1) + ' / ' + qs.length, manyQuotes: qs.length > 1,
+      qPrev: () => this.setState({ qi: qi - 1 }), qNext: () => this.setState({ qi: qi + 1 }),
+      onHome: s.screen === 'home', onP1: s.screen === 'p1', onP2: s.screen === 'p2', onP3: s.screen === 'p3', onAbout: s.screen === 'about',
+      navWorkLine: s.screen === 'about' ? 'transparent' : '#1A1714',
+      navAboutLine: s.screen === 'about' ? '#1A1714' : 'transparent',
+      goHome: () => this.go('home'), goP1: () => this.go('p1'), goP2: () => this.go('p2'), goP3: () => this.go('p3'), goAbout: () => this.go('about'),
+
+      skim: s.skim, full: !s.skim,
+      skimBg: s.skim ? '#1A1714' : 'transparent',
+      skimFg: s.skim ? '#F7F4EF' : '#1A1714',
+      skimKnob: s.skim ? '13px' : '2px',
+      toggleSkim: () => this.setState({ skim: !s.skim }),
+
+      drpQuery: s.q,
+      setQuery: e => this.setState({ q: e.target.value }),
+      drpCount: results.length,
+      drpEmpty: results.length === 0,
+      drpChips: chipNames.map(name => ({
+        label: name,
+        bg: s.filter === name ? '#1A1714' : 'transparent',
+        fg: s.filter === name ? '#F7F4EF' : '#4A423A',
+        border: s.filter === name ? '#1A1714' : '#DCD4C8',
+        pick: () => this.setState({ filter: name }),
+      })),
+      drpResults: results.map(r => ({ kind: r.kind, title: r.title, meta: r.meta })),
+
+      billRows: this.rows().map(r => ({
+        name: r.name, pool: r.pool, total: r.total, prev: r.prev, prevPct: r.prevPct, curPct: r.curPct,
+        delta: r.delta, why: r.why, term: r.term, termLabel: r.termLabel,
+        deltaColor: r.up === null ? '#6E6558' : (r.up ? accent : '#4A7C59'),
+        open: s.openRow === r.id,
+        mark: s.openRow === r.id ? '\u2212' : '+',
+        bg: s.openRow === r.id ? '#FCFAF7' : 'transparent',
+        toggle: () => this.setState({ openRow: s.openRow === r.id ? null : r.id }),
+      })),
+    };
+  }
+}
+</script>
+</body>
+</html>
